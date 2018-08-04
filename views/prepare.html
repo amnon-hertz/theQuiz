@@ -1,0 +1,79 @@
+<div ng-controller="prepareCtrl" class="container">
+    <!-- <div class="jumbotron" >
+      <h1>Manager Screen -- Prepare the Quiz</h1> 
+    <!-- </div> -->
+  
+<div class="row">
+    <div class="col-md-3" style="background-color:lavender">
+      <h3>List Of Quizes</h3>
+      <h6>to delete a quiz first doubleClick on it to mark it and then click here
+      <button type="button" ng-click="deleteQuiz(selectedQuiz)">delete</button></h6>
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="x in quizes" 
+        ng-class="{'yellow' : x === selectedQuiz}" ng-dblclick="selectQuiz(x)">
+            {{x.id}} / {{x.name}} / {{x.num}} / {{x.status}}       
+        </li>    
+     </ul> 
+     <button type="button" class="btn btn-block btn-success" ng-click="toggleQuizActive(selectedQuiz)">Make Active (on/off)</button>
+     <button type="button" class="btn btn-block btn-success" ng-click="gotoMain()">Goto Main Screen</button>
+    </div>
+
+    <div class="col-md-3" style="background-color:lavenderblush;">
+      <h3>add a new quiz</h3>
+      <form>
+          <div class="form-group">
+              <label for="name">Enter Name of Quiz:</label>
+              <input type="text" class="form-control" id="name" ng-model="name">
+          </div>
+          <div class="form-group">
+              <label for="num">Enter Unique Number For Quiz:</label>
+              <input type="number" class="form-control" id="num" ng-model="num">
+          </div>
+          <button type="button" class="btn btn-block btn-success" ng-click="addQuiz()">Add This Quiz</button>
+      </form>
+     
+    </div>
+
+    <div class="col-md-3" style="background-color:lavender">
+       <h3>List Of Questions</h3>
+       <button type="button" class="btn btn-block btn-success" ng-click="getQuestions()">Get Questions</button>
+       <h6>to delete a question first doubleClick on it to mark it and then click here
+           <button type="button" ng-click="deleteQuestion(selectedQuestion)">delete</button></h6>
+        <ul class="list-group">
+          <li class="list-group-item small" ng-repeat="x in questions" 
+           ng-class="{'yellow' : x === selectedQuestion}" ng-dblclick="selectQuestion(x)">
+              {{x.id}} / {{x.quizId}} / {{x.txt1}} / {{x.txt2}} / {{x.answer}} / {{x.answerTxt}}       
+         </li> 
+     </ul> 
+    </div>
+
+    <div class="col-md-3" style="background-color:lavenderblush;">
+      <h3>add a new question</h3>
+       <form>
+          <div class="form-group">
+              <textarea type="text" style="height:90px" class="form-control" id="txt1" 
+                   ng-model="txt1" placeholder="Enter Question here"></textarea>
+          </div>
+          <div class="form-group">
+              <textarea type="text" style="height:60px" class="form-control" id="txt2" 
+                   ng-model="txt2" placeholder="Continue Question"></textarea>
+          </div>
+          <div class="form-group">
+              <input type="text" class="form-control" id="img1" ng-model="img1" placeholder="link to image here">
+          </div>
+           <div class="form-group">
+              <input type="number" class="form-control" id="answer" ng-model="answer" placeholder="answer (a number) here">
+          </div>
+          <div class="form-group">
+              <textarea type="text" style="height:90px" class="form-control" id="answerTxt" 
+                   ng-model="answerTxt" placeholder="Description about the answer"></textarea>
+          </div>
+           <div class="form-group">
+              <input type="text" class="form-control" id="img2" ng-model="img2" placeholder="image about the answer">
+          </div>
+          <button type="button" class="btn btn-block btn-success" ng-click="addQuestion()">Add This Question</button>
+       </form> 
+    </div>
+
+ </div>
+</div>

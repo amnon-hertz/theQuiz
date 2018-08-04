@@ -1,0 +1,62 @@
+<div ng-controller="mainCtrl">
+<div class="row">
+   <div class="col-md-8 container" style="background-color:lightgrey;padding:20px;line-height: 49px; ">
+     <button type="button" class="btn btn-md btn-success" ng-click="refresh()">Refresh to next</button>&nbsp;&nbsp;
+     <span style="background-color:lavenderblush;padding: 10px">Login&nbspmembers:&nbsp{{totMembers}}</span>&nbsp;&nbsp;
+     <span style="background-color:lavender;padding: 10px">Total&nbspQuestions:&nbsp{{totQuestions}}</span>&nbsp;&nbsp;
+     <span style="background-color:lavenderblush;padding: 10px">Question&nbspNumber:&nbsp{{questionNumber}}</span>&nbsp;&nbsp;
+     <span style="background-color:lavender;padding: 10px">Total&nbspAnswers:&nbsp{{totAnswers}}</span>
+   </div>
+
+   <div class="col-md-4 container" style="background-color:lightblue;padding:20px;line-height: 49px" ng-class="showOption()">
+    <button type="button" class="btn btn-md btn-success" ng-click="mgrRefresh()">Next Question/Answer</button>&nbsp;&nbsp;
+   </div>
+
+</div>
+
+
+<div class="row">
+    <div class="col-md-4 container" style="background-color:lavender">
+      <div class="container">
+         <h3>The Question:</h3>
+         <div class="card">
+            <div class="card-body">
+              <p class="card-text">{{currQuestion.txt1}}</p>           
+              <p class="card-text">{{currQuestion.txt2}}</p>           
+         </div>
+         <img class="card-img-bottom" src="{{currQuestion.img1}}" alt="question image" style="width:100%">
+      </div>
+      <h6>&nbsp</h6>
+      <form>
+          <div class="form-group">
+              <!-- <label for="answer">My Answer is:</label> -->
+              <input type="number" class="form-control" id="answer" ng-model="answer" placeholder="Write The Answer Here">
+          </div> 
+          <button type="button" class="btn btn-block btn-lg btn-success" ng-click="sendAnswer()"
+           >Send My Answer {{txtV}}</button>
+      </form>
+       <h6>&nbsp</h6>
+    </div>
+
+  </div>
+
+    <div class="col-md-4" style="background-color:lavenderblush;">
+        <div class="container">
+         <h3>The Answer:</h3>
+         <div class="card" ng-class = "{'hideMe' : dontShow }">
+            <div class="card-body">
+              <p class="card-text">{{currQuestion.answer}}</p>           
+              <p class="card-text">{{currQuestion.answerTxt}}</p>           
+         </div>
+         <img class="card-img-bottom" src="{{currQuestion.img2}}" alt="answer image" style="width:100%">
+      </div>
+      <h6>&nbsp</h6>
+    </div>
+    </div>
+
+    <div class="col-md-4" style="background-color:lavender;">
+    
+    </div>
+
+ </div>
+</div>

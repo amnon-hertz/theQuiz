@@ -1,0 +1,114 @@
+{
+  "quiz": [{
+      "id": 0,
+      "name":  "quiz5",
+      "num": 33,
+      "status": "CLOSED"
+    }, 
+      {"id": 1,
+      "name":  "quiz6",
+      "num": 37,
+      "status": "CLOSED"
+      },
+      {"id": 2,
+      "name":  "quiz7",
+      "num": 123,
+      "status": "CLOSED"
+      }],
+
+   "member": [{
+        "id": 0,
+        "quizId": 33,
+        "name": "Yossi Cohen",
+        "currAns": 25.33,
+        "currDate": "2016-08-03T12:45:02.449Z",
+        "currPoints": 3,
+        "currLocation" : 999,
+        "totPoints": 8
+      }],
+
+        "question": [{
+        "id": 2,
+        "quizId": 1,
+        "model Point" : "421",
+        "txt1": "what is the radius of earth?",
+        "txt2": "please enter answer in Km.",
+        "img1": "https://svs.gsfc.nasa.gov/vis/a000000/a004500/a004597/slow_spin_4k.5542_print.jpg",
+        "answer": 6400.5,
+        "answerTxt": "the radius is 6400 km",
+        "img2": "https://image.shutterstock.com/z/stock-vector-question-mark-signs-and-word-answer-under-magnifier-glass-abstract-illustration-71759509.jpg",
+        "status": "INIT" 
+    },
+    {
+        "id": 1,
+        "quizId": 2,
+        "model Point" : "421",
+        "txt1": "כמה כוכבים יש בדגל ארצות הברית?",
+        "txt2": "הכנס תשובה מספרית",
+        "img1": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYHrXwL4qTWq1cKqwThz24jqjqxiNxuyAbdY_WJrcmEqaYE5fD1Q",
+        "answer": 50,
+        "answerTxt": "בדגל ארצות הברית יש 50 כוכבים",
+        "img2": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR26cu26NJisjK9WRv1Sli_cHwD3OyatuaO5r4uDDb2SwTqY8R8",
+        "status": "INIT" 
+      },
+      {
+        "id": 2,
+        "quizId": 2,
+        "model Point" : "421",
+        "txt1": "כמה זרועות יש לתמנון?",
+        "txt2": "הכנס תשובה מספרית",
+        "img1": "https://emojipedia-us.s3.amazonaws.com/socialmedia/apple/129/octopus_1f419.png",
+        "answer": 8,
+        "answerTxt": "לתמנון יש 8 זרועות",
+        "img2": "https://s3.pixers.pics/pixers/700/FO/49/27/70/52/700_FO49277052_4ebb14380f1d0c5283a083b0e07a9977.jpg",
+        "status": "INIT" 
+      },
+      {
+        "id": 3,
+        "quizId": 2,
+        "model Point" : "421",
+        "txt1": "מה הגיל המינימאלי בישראל אשר בו מותר להתחתן?",
+        "txt2": "הכנס תשובה מספרית",
+        "img1": "http://mascoutahlibrary.com/wp-content/uploads/2014/12/Clip-art-images-for-wedding-free-wedding-clipart-wedding-image.jpg",
+        "answer": 18,
+        "answerTxt": "בישראל מותר להתחתן בגיל 18",
+        "img2": "http://images.clipartpanda.com/carat-clipart-wedding-clipart-free-to-use-public-domain-wedding-clip-art---page-2-pictures.png",
+        "status": "INIT" 
+      },
+      {
+        "id": 4,
+        "quizId": 2,
+        "model Point" : "421",
+        "txt1": "מה גובה קרקעיתו של ים המלח יחסית לפני הים?",
+        "txt2": "הכנס תשובה מספרית. מספר שלילי",
+        "img1": "https://i.redd.it/njiaypl0twiz.jpg",
+        "answer": -401,
+        "answerTxt": "ים המלח בגובה 401 מטרים מתחת לפני הים",
+        "img2": "https://qph.fs.quoracdn.net/main-qimg-c6eb72fd94b07f7903fac5779504e21f",
+        "status": "INIT" 
+      },
+      {
+        "id": 5,
+        "quizId": 2,
+        "model Point" : "421",
+        "txt1": "כמה לירות ישראליות שווה שקל חדש אחד?",
+        "txt2": "הכנס תשובה מספרית",
+        "img1": "http://pngimg.com/uploads/question_mark/question_mark_PNG84.png",
+        "answer": 10000,
+        "answerTxt": "אחרי שתי המרות",
+        "img2": "https://image.shutterstock.com/z/stock-vector-question-mark-signs-and-word-answer-under-magnifier-glass-abstract-illustration-71759509.jpg",
+        "status": "INIT" 
+      },
+      {
+        "id": 6,
+        "quizId": 2,
+        "model Point" : "421",
+        "txt1": "כמה פעמים בחייו התחתן בנימין נתניהו?",
+        "txt2": "הכנס תשובה מספרית",
+        "img1": "http://pngimg.com/uploads/question_mark/question_mark_PNG84.png",
+        "answer": 3,
+        "answerTxt": "בנימים נתניהו התחתן 3 פעמים",
+        "img2": "https://image.shutterstock.com/z/stock-vector-question-mark-signs-and-word-answer-under-magnifier-glass-abstract-illustration-71759509.jpg",
+        "status": "INIT" 
+      }]
+}
