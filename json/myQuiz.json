@@ -28,8 +28,8 @@
       }],
 
         "question": [{
-        "id": 2,
-        "quizId": 1,
+        "id": 0,
+        "quizId": 2,
         "model Point" : "421",
         "txt1": "what is the radius of earth?",
         "txt2": "please enter answer in Km.",
