@@ -116,7 +116,8 @@ app.factory("smartService",function($http, $q){
                 for (i=0; i< memberWide.length ; i++) {
                   points =  Math.max(3 - i, 0 ); // first = 3 points. second = 2. 3rd = 1. all other = 0
                   memberWide[i].currLocation = i + 1 ;
-                  memberWide[i].totPoints+= points;  
+                  memberWide[i].totPoints+= points; 
+                  delete memberWide.diff; 
                   $http.put('https://json-server-heroku-rzjbusydok.now.sh/member/'+memberWide.id, memberWide).then(function(resp2) {                           
                   })                  
                 }
