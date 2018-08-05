@@ -98,7 +98,7 @@ app.factory("smartService",function($http, $q){
 
     function calcPoints(quiz, question) {
        memberWide = [];
-       tarNow = new Date.now()
+       var tarNow = new Date();
        $http.get('https://json-server-heroku-rzjbusydok.now.sh/member?quizId='+quiz.id).then(function(resp2) {
                 memberWide = resp2.data;
                 
