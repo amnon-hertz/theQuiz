@@ -1,13 +1,14 @@
 app.controller("mainCtrl", function($rootScope,$http, $scope, $location, quizService, smartService) {
 
 
-setInterval(function(){ document.getElementById('refreshButton').click() }, 9000);
+//setInterval(function(){ document.getElementById('refreshButton').click() }, 9000);
 
 
 $scope.dontShow = true;
 $scope.currQuestion = null;
 $scope.bestCurrQuestion = [];
 $scope.bestOfQuiz = [];
+$scope.members = [];
 results = [-1,-2,-3,-4];
 var mgrStat = "INIT";
 $scope.mgrRefresh = function() {
@@ -21,6 +22,7 @@ $scope.mgrRefresh = function() {
             smartService.updCurrQuestionToAnswer($scope.currQuestion).then(function(q) {
              $scope.currQuestion = q;  
              $scope.dontShow = false;
+             $scope.answer = null;
              smartService.calcPoints($rootScope.activeQuiz,$scope.currQuestion);
       })
     }
@@ -31,13 +33,20 @@ $scope.mgrRefresh = function() {
                $scope.currQuestion = q;
                $scope.dontShow = true;
               })
-            //clnMembersFields($rootScope.activeQuiz);
+            smartService.clnMembersFields($rootScope.activeQuiz);
       }
     if (mgrStat === "QUESTION") mgrStat = "ANSWER";
        else mgrStat = "QUESTION";
  }
 
  $scope.refresh = function() {
+     
+     smartService.getCurrMember($rootScope.activeQuiz, $rootScope.member).then(function(m) {
+        $rootScope.member = m;
+        console.log("m:");
+        console.log(m);
+     })
+
      smartService.calcSummeries($rootScope.activeQuiz).then(function(results) {
        $scope.totMembers = results[0];
        $scope.totQuestions = results[1];
@@ -53,14 +62,18 @@ $scope.mgrRefresh = function() {
         if ($scope.currQuestion.status === "ANSWER") {
           $scope.dontShow = false;
           $scope.txtV = "";
+          if ($scope.members.length === 0) {
+             smartService.loadMembers($rootScope.activeQuiz).then(function(m) {
+               $scope.members = m;
+             })
+          }
         }
-         else  $scope.dontShow = true;
-
+         else  {
+           $scope.dontShow = true;
+           $scope.members.splice(0,$scope.members.length);
+         }
       })
-      // smartService.get3Best($rootScope.activeQuiz).then(function(m) {
-      //   //$scope.best3Curr = m;
-        
-      // })
+      
  }
 
  $scope.sendAnswer = function() {
@@ -80,28 +93,6 @@ $scope.mgrRefresh = function() {
 
 
 app.factory("mainService",function(){
-    // function Quiz(id, name, num, status) {
-    //   this.id = id;
-    //   this.name = name;
-    //   this.num = num;
-    //   this.status = status;
-    // }
-    
-    // function Question(id, quizId, txt1, txt2, img1, answer, answerTxt, img2, status) {
-    //   this.id = id;
-    //   this.quizId = quizId;
-    //   this.txt1 = txt1; 
-    //   this.txt2 = txt2; 
-    //   this.img1 = img1;
-    //   this.answer = answer;
-    //   this.answerTxt = answerTxt;
-    //   this.img2 = img2;
-    //   this.status = status;    
-    // }
-     
-    //  return {
-    //    newQuiz : Quiz,
-    //    newQuestion: Question      
-    //  }
+
    
 })
