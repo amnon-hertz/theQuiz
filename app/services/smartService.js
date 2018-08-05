@@ -103,7 +103,7 @@ app.factory("smartService",function($http, $q){
                 memberWide = resp2.data;
                 for (i=0; i < memberWide.length ; i++) {
                   console.log(tarNow);
-                  console.log(memberWide[i].currDate);
+                  console.log(new Date(memberWide[i].currDate));
                   console.log("3: " + (tarNow - memberWide[i].currDate));
                   console.log((tarNow - memberWide[i].currDate)/9999999);
                   
