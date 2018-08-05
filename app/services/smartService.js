@@ -102,14 +102,12 @@ app.factory("smartService",function($http, $q){
        $http.get('https://json-server-heroku-rzjbusydok.now.sh/member?quizId='+quiz.id).then(function(resp2) {
                 memberWide = resp2.data;
                 for (i=0; i < memberWide.length ; i++) {
-                  console.log(tarNow);
-                  console.log(new Date(memberWide[i].currDate));
-                  console.log("3: " + (tarNow - memberWide[i].currDate));
-                  console.log((tarNow - memberWide[i].currDate)/9999999);
-                  
-                  
-                  
-                  memberWide[i].diff = Math.abs(question.answer - memberWide[i].currAns) + (tarNow - memberWide[i].currDate)/999999999999 ; 
+                  // console.log(tarNow);
+                  // console.log(new Date(memberWide[i].currDate));
+                  // console.log("3: " + (tarNow - memberWide[i].currDate));
+                  // console.log((tarNow - memberWide[i].currDate)/9999999);
+                                   
+                  memberWide[i].diff = Math.abs(question.answer - memberWide[i].currAns) + (tarNow - new Date(memberWide[i].currDate))/999999999999 ; 
                   console.log("2: "+memberWide[i].diff);
                 }
                 for (i = memberWide.length -2 ; i>=0 ; i--)
