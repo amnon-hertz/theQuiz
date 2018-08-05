@@ -1,5 +1,9 @@
 app.controller("mainCtrl", function($rootScope,$http, $scope, $location, quizService, smartService) {
 
+
+setInterval(function(){ document.getElementById('refreshButton').click() }, 3000);
+
+
 $scope.dontShow = true;
 $scope.currQuestion = null;
 $scope.bestCurrQuestion = [];
