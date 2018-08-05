@@ -1,19 +1,19 @@
 app.factory("smartService",function($http, $q){
     
     function prepareQuiz(quiz) {
-       $http.get('https://json-server-heroku-uoqavpbzgk.now.sh/question?quizId='+quiz.id).then(function(response) {
+       $http.get('https://json-server-heroku-rzjbusydok.now.sh/question?quizId='+quiz.id).then(function(response) {
          for (i=0;i< response.data.length ; i++){ 
            var question = response.data[i];
            question.status = "INIT";
-            $http.put('https://json-server-heroku-uoqavpbzgk.now.sh/question/'+question.id, question).then(function(resp2) {                           
+            $http.put('https://json-server-heroku-rzjbusydok.now.sh/question/'+question.id, question).then(function(resp2) {                           
                 })           
            }
        });
 
-       $http.get('https://json-server-heroku-uoqavpbzgk.now.sh/member?quizId='+quiz.id).then(function(resp3) {
+       $http.get('https://json-server-heroku-rzjbusydok.now.sh/member?quizId='+quiz.id).then(function(resp3) {
          for (i=0;i< resp3.data.length ; i++){ 
            var member = resp3.data[i];
-            $http.delete('https://json-server-heroku-uoqavpbzgk.now.sh/member/'+member.id).then(function(resp4) {                           
+            $http.delete('https://json-server-heroku-rzjbusydok.now.sh/member/'+member.id).then(function(resp4) {                           
                 })           
            }
        });
@@ -21,14 +21,14 @@ app.factory("smartService",function($http, $q){
     
     function getNextQuestion(quiz) {
         async = $q.defer()
-        $http.get('https://json-server-heroku-uoqavpbzgk.now.sh/question?quizId=' + quiz.id + "&status=INIT").then(function(response) {
+        $http.get('https://json-server-heroku-rzjbusydok.now.sh/question?quizId=' + quiz.id + "&status=INIT").then(function(response) {
            if (response.data === null || response.data.length === 0) 
             {  alert("Did Not Succeed To Get Next Question. Is Quiz Ended?");
               async.resolve(null);
             }        
         var question = response.data[0];
         question.status = "QUESTION";
-        $http.put('https://json-server-heroku-uoqavpbzgk.now.sh/question/'+question.id, question).then(function(resp2) {                           
+        $http.put('https://json-server-heroku-rzjbusydok.now.sh/question/'+question.id, question).then(function(resp2) {                           
                 }) 
         async.resolve(question);                
        })
@@ -38,7 +38,7 @@ app.factory("smartService",function($http, $q){
     function updCurrQuestionToAnswer(question) {
         async = $q.defer()
         question.status = "ANSWER";
-        $http.put('https://json-server-heroku-uoqavpbzgk.now.sh/question/'+question.id, question).then(function(resp2) { 
+        $http.put('https://json-server-heroku-rzjbusydok.now.sh/question/'+question.id, question).then(function(resp2) { 
           async.resolve(question);                           
                 })       
         return async.promise
@@ -46,12 +46,12 @@ app.factory("smartService",function($http, $q){
 
     function updCurrAnswerToFinished(question) {
         question.status = "FINISHED";
-        $http.put('https://json-server-heroku-uoqavpbzgk.now.sh/question/'+question.id, question).then(function(resp2) {                           
+        $http.put('https://json-server-heroku-rzjbusydok.now.sh/question/'+question.id, question).then(function(resp2) {                           
                 })       
     }
     
    function getActiveQuiz() {
-         $http.get('https://json-server-heroku-uoqavpbzgk.now.sh/quiz').then(function(response) {
+         $http.get('https://json-server-heroku-rzjbusydok.now.sh/quiz').then(function(response) {
          if (response.data.length === 0 ) return null;
            else return response.data[0] ;
                 })           
@@ -63,13 +63,13 @@ app.factory("smartService",function($http, $q){
        var totQuestions = 0;
        var totFinished = 0;
        var totAnswered = 0;
-       $http.get('https://json-server-heroku-uoqavpbzgk.now.sh/question?quizId='+quiz.id).then(function(response) {
+       $http.get('https://json-server-heroku-rzjbusydok.now.sh/question?quizId='+quiz.id).then(function(response) {
          for (i=0;i< response.data.length ; i++){ 
            var question = response.data[i];
            totQuestions++;
            if (question.status === "FINISHED") totFinished++;
           }
-          $http.get('https://json-server-heroku-uoqavpbzgk.now.sh/member?quizId='+quiz.id).then(function(resp2) {
+          $http.get('https://json-server-heroku-rzjbusydok.now.sh/member?quizId='+quiz.id).then(function(resp2) {
                 for (i=0;i< resp2.data.length ; i++) {
                     totMembers++;
                     if (resp2.data[i].currAns !== -999999) totAnswered++;
@@ -82,7 +82,7 @@ app.factory("smartService",function($http, $q){
 
     function getCurrQuestion(quiz) {
        var async = $q.defer();
-       $http.get('https://json-server-heroku-uoqavpbzgk.now.sh/question?quizId='+quiz.id).then(function(response) {
+       $http.get('https://json-server-heroku-rzjbusydok.now.sh/question?quizId='+quiz.id).then(function(response) {
          var question = null;  
          for (i=0;i< response.data.length ; i++)
            if (response.data[i].status === "QUESTION" || response.data[i].status === "ANSWER") question = response.data[i]; 
@@ -92,14 +92,14 @@ app.factory("smartService",function($http, $q){
        }
 
      function updAnswerOfMember(member) {
-        $http.put('https://json-server-heroku-uoqavpbzgk.now.sh/member/'+member.id, member).then(function(resp2) {                           
+        $http.put('https://json-server-heroku-rzjbusydok.now.sh/member/'+member.id, member).then(function(resp2) {                           
                 })       
     }
 
     function calcPoints(quiz, question) {
        memberWide = [];
        tarNow = new Date.now()
-       $http.get('https://json-server-heroku-uoqavpbzgk.now.sh/member?quizId='+quiz.id).then(function(resp2) {
+       $http.get('https://json-server-heroku-rzjbusydok.now.sh/member?quizId='+quiz.id).then(function(resp2) {
                 memberWide = resp2.data;
                 
                 for (i=0; i < memberWide.length ; i++) 
@@ -116,7 +116,7 @@ app.factory("smartService",function($http, $q){
                   points =  Math.max(3 - i, 0 ); // first = 3 points. second = 2. 3rd = 1. all other = 0
                   memberWide[i].currLocation = i + 1 ;
                   memberWide[i].totPoints+= points;  
-                  $http.put('https://json-server-heroku-uoqavpbzgk.now.sh/member/'+memberWide.id, memberWide).then(function(resp2) {                           
+                  $http.put('https://json-server-heroku-rzjbusydok.now.sh/member/'+memberWide.id, memberWide).then(function(resp2) {                           
                   })                  
                 }
 
