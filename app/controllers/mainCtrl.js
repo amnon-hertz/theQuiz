@@ -17,7 +17,7 @@ $scope.mgrRefresh = function() {
             smartService.updCurrQuestionToAnswer($scope.currQuestion).then(function(q) {
              $scope.currQuestion = q;  
              $scope.dontShow = false;
-             calcPoints($rootScope.activeQuiz,$scope.currQuestion);
+             smartService.calcPoints($rootScope.activeQuiz,$scope.currQuestion);
       })
     }
     if (mgrStat === "ANSWER") {
