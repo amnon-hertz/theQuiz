@@ -54,7 +54,7 @@ $scope.mgrRefresh = function() {
 
       })
       smartService.get3best($rootScope.activeQuiz).then(function(m) {
-        $scope.best3Curr = m;
+        //$scope.best3Curr = m;
         
       })
  }

@@ -129,7 +129,9 @@ app.factory("smartService",function($http, $q){
 
 
                })             
+          function get3Best(quiz) {
                     
+            }    
 
     }
     
@@ -143,6 +145,7 @@ app.factory("smartService",function($http, $q){
        getActiveQuiz : getActiveQuiz,
        getCurrQuestion : getCurrQuestion,
        updAnswerOfMember : updAnswerOfMember,
-       calcPoints : calcPoints
+       calcPoints : calcPoints,
+       get3Best : get3Best
      }
 })
