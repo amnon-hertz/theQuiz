@@ -53,7 +53,10 @@ $scope.mgrRefresh = function() {
          else  $scope.dontShow = true;
 
       })
-
+      smartService.get3best($rootScope.activeQuiz).then(function(m) {
+        $scope.best3Curr = m;
+        
+      })
  }
 
  $scope.sendAnswer = function() {
