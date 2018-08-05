@@ -104,8 +104,8 @@ app.factory("smartService", function ($http, $q) {
       for (i = 0; i < memberWide.length; i++) {
         console.log(tarNow);
         console.log(new Date(memberWide[i].currDate));
-        console.log("3: " + (tarNow - memberWide[i].currDate));
-        console.log((tarNow - memberWide[i].currDate) / 9999999);
+        console.log(tarNow - new Date(memberWide[i].currDate));
+        console.log((tarNow - new Date(memberWide[i].currDate)) / 9999999);
 
         memberWide[i].diff = Math.abs(question.answer - memberWide[i].currAns) + (tarNow - new Date(memberWide[i].currDate)) / 999999999999;
         console.log("2: " + memberWide[i].diff);
@@ -121,9 +121,9 @@ app.factory("smartService", function ($http, $q) {
         points = Math.max(3 - i, 0); // first = 3 points. second = 2. 3rd = 1. all other = 0
         memberWide[i].currLocation = i + 1;
         memberWide[i].totPoints += points;
-        delete memberWide.diff;
-        $console.log(memberWide.id);
-        $http.put('https://json-server-heroku-rzjbusydok.now.sh/member/' + memberWide.id, memberWide).then(function (resp2) {
+        //delete memberWide.diff;
+        console.log(memberWide.id);
+        $http.put('https://json-server-heroku-rzjbusydok.now.sh/member/' + memberWide[i].id, memberWide[i]).then(function (resp2) {
         })
       }
     })
