@@ -43,8 +43,6 @@ $scope.mgrRefresh = function() {
      
      smartService.getCurrMember($rootScope.activeQuiz, $rootScope.member).then(function(m) {
         $rootScope.member = m;
-        console.log("m:");
-        console.log(m);
      })
 
      smartService.calcSummeries($rootScope.activeQuiz).then(function(results) {
