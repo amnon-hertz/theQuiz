@@ -129,9 +129,9 @@ app.factory("smartService", function ($http, $q) {
     })
   }
 
-  function get3Best(quiz) {
-
-  }
+  // function get3Best(quiz) {
+  //   var async = $q.defer();
+  // }
 
   return {
     prepareQuiz: prepareQuiz,
