@@ -1,6 +1,6 @@
 
 app.controller("homeCtrl", function($rootScope,$scope, $location, $http, homeService, smartService) {
-$rootScope.linkJson = "https://json-server-heroku-pzamzgwrae.now.sh"
+$rootScope.linkJson = "https://json-server-heroku-uoqavpbzgk.now.sh"
 $scope.gotoHome = function(){
  $location.path("/home");
 };
