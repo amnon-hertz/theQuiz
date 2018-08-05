@@ -5,6 +5,7 @@ app.controller("prepareCtrl", function($rootScope,$http, $scope, $location, quiz
  $scope.selectedQuestion = null; 
  $scope.quizes = [];
  $scope.questions = [];
+ $scope.ActiveToggle;
 
  $http.get($rootScope.linkJson + '/quiz').then(function(response) {
      for (i=0;i<response.data.length ; i++){ 
@@ -31,8 +32,13 @@ app.controller("prepareCtrl", function($rootScope,$http, $scope, $location, quiz
         alert("no quiz was selected. Please select quiz first by double Click on it");
         return;
      }
-     if (quiz.status === "OPENED") quiz.status = "CLOSED";
-        else quiz.status = "OPENED";
+     if (quiz.status === "OPENED") {
+        quiz.status = "CLOSED";
+        $scope.ActiveToggle = true;
+        }
+        else{ quiz.status = "OPENED";
+        $scope.ActiveToggle = false;
+      }
       $http.put($rootScope.linkJson + '/quiz/' +quiz.id, quiz).then(function(response) {
        if (response.data.status === "OPENED") {
              $rootScope.activeQuiz = response.data;

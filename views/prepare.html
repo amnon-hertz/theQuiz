@@ -14,7 +14,7 @@
             {{x.id}} / {{x.name}} / {{x.num}} / {{x.status}}       
         </li>    
      </ul> 
-     <button type="button" class="btn btn-block btn-success" ng-click="toggleQuizActive(selectedQuiz)">Make Active (on/off)</button>
+     <button type="button" class="btn btn-block btn-success" ng-click="toggleQuizActive(selectedQuiz)">{{ ActiveToggle ? 'Active' : 'Deactive'}}</button>
      <button type="button" class="btn btn-block btn-success" ng-click="gotoMain()">Goto Main Screen</button>
     </div>
 
