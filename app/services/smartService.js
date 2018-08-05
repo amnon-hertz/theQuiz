@@ -142,7 +142,7 @@ app.factory("smartService", function ($http, $q) {
     getActiveQuiz: getActiveQuiz,
     getCurrQuestion: getCurrQuestion,
     updAnswerOfMember: updAnswerOfMember,
-    calcPoints: calcPoints,
-    get3Best: get3Best
+    calcPoints: calcPoints //,
+    //get3Best: get3Best
   }
 })
