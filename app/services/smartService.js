@@ -101,10 +101,10 @@ app.factory("smartService",function($http, $q){
        var tarNow = new Date();
        $http.get('https://json-server-heroku-rzjbusydok.now.sh/member?quizId='+quiz.id).then(function(resp2) {
                 memberWide = resp2.data;
-                
+                console.log("1: "+memberWide[i].diff);
                 for (i=0; i < memberWide.length ; i++) {
                   memberWide[i].diff = Math.abs(question.answer - memberWide[i].currAns) + (tarNow - memberWide[i].memberDate)/9999999 ; 
-                  console.log(memberWide[i].diff);
+                  console.log("2: "+memberWide[i].diff);
                 }
                 for (i = memberWide.length -2 ; i>=0 ; i--)
                    for (j=0 ; j<= i ; j++)
