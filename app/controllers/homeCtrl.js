@@ -12,7 +12,7 @@ $scope.mgrLogin = function(){
   if ($scope.mgrName === "1" && $scope.mgrPass === "1") 
   {
     $rootScope.isMgrLogin = true;
-    var mmbr = new homeService.newMember(null,$rootScope.activeQuiz.id, "System", -999999, "",  0, 0); 
+    var mmbr = new homeService.newMember(null,$rootScope.activeQuiz.id, "SystemMgr", -999999, "",  0, 0); 
     $http.post($rootScope.linkJson + '/member/',mmbr).then(function(response) {            
       $rootScope.member = response.data;
       $location.path("/prepare");
