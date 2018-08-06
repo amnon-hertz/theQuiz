@@ -49,7 +49,7 @@ app.controller("prepareCtrl", function ($rootScope, $http, $scope, $location, qu
     $http.put($rootScope.linkJson + '/quiz/' + quiz.id, quiz).then(function (response) {
       if (response.data.status === "OPENED") {
         $rootScope.activeQuiz = response.data;
-        smartService.prepareQuiz(quiz);
+        smartService.prepareQuiz(quiz, $rootScope.linkJson);
       }
       else $rootScope.activeQuiz = null;
     });

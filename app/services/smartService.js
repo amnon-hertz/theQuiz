@@ -1,6 +1,6 @@
-app.factory("smartService", function ($http, $q) {
+app.factory("smartService", function ($http, $q, homeService) {
 
-  function prepareQuiz(quiz) {
+  function prepareQuiz(quiz,linkJson) {
     $http.get('https://json-server-heroku-rzjbusydok.now.sh/question?quizId=' + quiz.id).then(function (response) {
       for (i = 0; i < response.data.length; i++) {
         var question = response.data[i];
@@ -17,6 +17,10 @@ app.factory("smartService", function ($http, $q) {
         })
       }
     });
+    var textDate = new Date();
+    var mmbr = new homeService.newMember(null, quiz.id, "SystemMgr", -999999, textDate,  0, 0); 
+    $http.post(linkJson + '/member/',mmbr).then(function(response) {          
+           })
   }
 
   function getNextQuestion(quiz) {
@@ -111,7 +115,8 @@ app.factory("smartService", function ($http, $q) {
       console.log(resp2.data);
       memberWide = resp2.data;
       for (i = 0; i < memberWide.length; i++) {
-        if (memberWide[i].currAns === null) memberWide[i].currAns = -999999;
+        //if (memberWide[i].currAns === null) memberWide[i].currAns = -999999;
+        
         memberWide[i].diff = Math.abs(question.answer - memberWide[i].currAns) + (tarNow - new Date(memberWide[i].currDate)) / 999999999999;
       }
       for (i = memberWide.length - 2; i >= 0; i--)

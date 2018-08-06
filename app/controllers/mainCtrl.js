@@ -1,16 +1,21 @@
 app.controller("mainCtrl", function($rootScope,$http, $scope, $location, quizService, smartService) {
 
-
 setInterval(function(){ document.getElementById('refreshButton').click() }, 6000);
-
 
 $scope.dontShow = true;
 $scope.currQuestion = null;
+$scope.answer = null;
 $scope.bestCurrQuestion = [];
 $scope.bestOfQuiz = [];
 $scope.members = [];
 results = [-1,-2,-3,-4];
 var mgrStat = "INIT";
+
+
+window.onbeforeunload = function() {
+  return 'Do you really want to leave this page?';
+}
+
 $scope.mgrRefresh = function() {
     if (mgrStat === "INIT") {
         smartService.getNextQuestion($rootScope.activeQuiz).then(function(q) {
@@ -41,16 +46,18 @@ $scope.mgrRefresh = function() {
 
  $scope.refresh = function() {
      
-     smartService.getCurrMember($rootScope.activeQuiz, $rootScope.member).then(function(m) {
-        $rootScope.member = m;
-     })
-
-     smartService.calcSummeries($rootScope.activeQuiz).then(function(results) {
-       $scope.totMembers = results[0];
-       $scope.totQuestions = results[1];
-       $scope.questionNumber = results[2];
-       $scope.totAnswers = results[3];
-      });
+    if (!$rootScope.isMgrLogin) {
+         smartService.getCurrMember($rootScope.activeQuiz, $rootScope.member).then(function(m) {
+            $rootScope.member = m;
+         })
+      }
+         smartService.calcSummeries($rootScope.activeQuiz).then(function(results) {
+         $scope.totMembers = results[0];
+         $scope.totQuestions = results[1];
+         $scope.questionNumber = results[2];
+         $scope.totAnswers = results[3];
+        });
+    
       smartService.getCurrQuestion($rootScope.activeQuiz).then(function(q) {
         $scope.currQuestion = q;
         if ($scope.currQuestion === null) {
@@ -58,6 +65,7 @@ $scope.mgrRefresh = function() {
           return;
         }
         if ($scope.currQuestion.status === "ANSWER") {
+          $scope.answer = null;
           $scope.dontShow = false;
           $scope.txtV = "";
           if ($scope.members.length === 0) {

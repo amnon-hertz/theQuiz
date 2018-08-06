@@ -1,7 +1,7 @@
 {
   "quiz": [{
       "id": 0,
-      "name":  "quiz5",
+      "name":  "thisQuizMustExist",
       "num": 33,
       "status": "CLOSED"
     }, 
@@ -13,7 +13,7 @@
       {"id": 2,
       "name":  "quiz7",
       "num": 123,
-      "status": "CLOSED"
+      "status": "OPENED"
       }],
 
    "member": [{
