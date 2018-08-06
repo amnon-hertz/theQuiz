@@ -81,7 +81,7 @@ $scope.mgrRefresh = function() {
   return false;
 }
 
-$scope.checkPoints = function (ind) {
+$scope.checkPoints2 = function (ind) {
   if(ind > 5) {
     return false;
   }
