@@ -1,7 +1,7 @@
 app.controller("mainCtrl", function($rootScope,$http, $scope, $location, quizService, smartService) {
 
 
-//setInterval(function(){ document.getElementById('refreshButton').click() }, 9000);
+setInterval(function(){ document.getElementById('refreshButton').click() }, 6000);
 
 
 $scope.dontShow = true;
