@@ -74,6 +74,15 @@ $scope.mgrRefresh = function() {
       
  }
 
+ $scope.checkPoints = function (member) {
+   if(member.currPoints > 0) {
+     console.log("this user is shown - " + member.name);
+     return true;
+   }
+   console.log("this user is NOT shown - " + member.name + "score: 0");
+   return false;
+ }
+
  $scope.sendAnswer = function() {
       $rootScope.member.currAns = $scope.answer;
       $rootScope.member.currDate = new Date();
