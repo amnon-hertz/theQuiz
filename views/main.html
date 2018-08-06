@@ -86,7 +86,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr ng-repeat="member in members | filter: checkPoints2($index) | orderBy : 'totPoints' : true">
+              <tr ng-repeat="member in members | orderBy : 'totPoints' : true |  limitTo: 5" >
                 <th scope="row">{{$index+1}}</th>
                 <td>{{member.name}}</td>
                 <td>{{member.totPoints}}</td>
