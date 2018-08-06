@@ -65,7 +65,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr ng-repeat="member in members | orderBy : member.currPoints : reverse">
+            <tr ng-repeat="member in members | filter : {{member.currPoints > 0}} | orderBy : {{member.currPoints}} : reverse">
               <th scope="row">1</th>
               <td>{{member.name}}</td>
               <td>{{member.currPoints}}</td>
