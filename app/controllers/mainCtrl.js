@@ -103,9 +103,6 @@ $scope.checkPoints = function (ind) {
      
 })
 
-// $scope.sortByPoints = function(){
-//   sortByPoints
-// }
 app.factory("mainService",function(){
 
    
