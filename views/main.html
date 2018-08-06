@@ -55,7 +55,7 @@
     </div>
 
     <div class="col-md-4" style="background-color:lavender;">
-      <h3>The Best Score</h3>
+      <h3>The Best This Question</h3>
       <table class="table table-bordered table-sm">
           <thead  class="thead-dark">
             <tr>
@@ -72,19 +72,26 @@
               <td>{{member.currAns}}</td>
               <td>{{member.currPoints}}</td>
             </tr>
-            <!-- <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>45</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>33</td>
-            </tr> -->
           </tbody>
         </table>
-    <!-- eyal ng-repaet x in best3Curr-->
+
+        <h3>The Best of Quiz</h3>
+        <table class="table table-bordered table-sm">
+            <thead  class="thead-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="member in members | orderBy : 'totPoints' : true">
+                <th scope="row">{{$index+1}}</th>
+                <td>{{member.name}}</td>
+                <td>{{member.totPoints}}</td>
+              </tr>
+            </tbody>
+          </table>
     </div>
 
  </div>
