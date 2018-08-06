@@ -61,13 +61,15 @@
             <tr>
               <th scope="col">#</th>
               <th scope="col">Name</th>
+              <th scope="col">Answer</th>
               <th scope="col">Score</th>
             </tr>
           </thead>
           <tbody>
-            <tr ng-repeat="member in members | filter : {{member.currPoints > 0}} | orderBy : {{member.currPoints}} : reverse">
-              <th scope="row">1</th>
+            <tr ng-repeat="member in members | orderBy : 'currPoints' : true">
+              <th scope="row">{{$index+1}}</th>
               <td>{{member.name}}</td>
+              <td>{{member.currAns}}</td>
               <td>{{member.currPoints}}</td>
             </tr>
             <!-- <tr>

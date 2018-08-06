@@ -89,7 +89,9 @@ $scope.mgrRefresh = function() {
      
 })
 
-
+// $scope.sortByPoints = function(){
+//   sortByPoints
+// }
 app.factory("mainService",function(){
 
    
