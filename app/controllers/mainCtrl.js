@@ -75,13 +75,18 @@ $scope.mgrRefresh = function() {
  }
 
  $scope.checkPoints = function (member) {
-   if(member.currPoints > 0) {
-     console.log("this user is shown - " + member.name);
-     return true;
-   }
-   console.log("this user is NOT shown - " + member.name + "score: 0");
-   return false;
- }
+  if(member.currPoints > 0) {
+    return true;
+  }
+  return false;
+}
+
+$scope.checkPoints = function (ind) {
+  if(ind > 5) {
+    return false;
+  }
+  return true;
+}
 
  $scope.sendAnswer = function() {
       $rootScope.member.currAns = $scope.answer;
