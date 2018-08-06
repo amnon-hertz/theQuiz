@@ -65,12 +65,12 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr ng-repeat="member in members | orderBy : member.currPoints : reverse">
               <th scope="row">1</th>
-              <td>Mark</td>
-              <td>50</td>
+              <td>{{member.name}}</td>
+              <td>{{member.currPoints}}</td>
             </tr>
-            <tr>
+            <!-- <tr>
               <th scope="row">2</th>
               <td>Jacob</td>
               <td>45</td>
@@ -79,7 +79,7 @@
               <th scope="row">3</th>
               <td>Larry</td>
               <td>33</td>
-            </tr>
+            </tr> -->
           </tbody>
         </table>
     <!-- eyal ng-repaet x in best3Curr-->
