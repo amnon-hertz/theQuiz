@@ -99,7 +99,7 @@ app.controller("prepareCtrl", function ($rootScope, $http, $scope, $location, qu
       return;
     }
     var question = new quizService.newQuestion(null, $scope.selectedQuiz.id,
-      $scope.txt1, $scope.txt2, $scope.img1, $scope.answer, $scope.answerTxt, $scope.img2, "INIT");
+      $scope.txt1, $scope.txt2, $scope.model, $scope.img1, $scope.answer, $scope.answerTxt, $scope.img2, "INIT");
     $http.post($rootScope.linkJson + '/question/', question).then(function (response) {
       $scope.questions.push(response.data);
     })
@@ -111,7 +111,7 @@ app.controller("prepareCtrl", function ($rootScope, $http, $scope, $location, qu
       var p = response.data;
       for (i = 0; i < p.length; i++) {
         var question = new quizService.newQuestion(p[i].id, p[i].quizId,
-          p[i].txt1, p[i].txt2, p[i].img1, p[i].answer, p[i].answerTxt, p[i].img2, p[i].status);
+          p[i].txt1, p[i].txt2, p[i].model, p[i].img1, p[i].answer, p[i].answerTxt, p[i].img2, p[i].status);
         if (p[i].quizId === $scope.selectedQuiz.id) $scope.questions.push(question);
       }
     });
@@ -129,11 +129,12 @@ app.factory("quizService", function () {
     this.status = status;
   }
 
-  function Question(id, quizId, txt1, txt2, img1, answer, answerTxt, img2, status) {
+  function Question(id, quizId, txt1, txt2, model, img1, answer, answerTxt, img2, status) {
     this.id = id;
     this.quizId = quizId;
     this.txt1 = txt1;
     this.txt2 = txt2;
+    this.model = model;
     this.img1 = img1;
     this.answer = answer;
     this.answerTxt = answerTxt;
