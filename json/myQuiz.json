@@ -30,7 +30,7 @@
         "question": [{
         "id": 0,
         "quizId": 2,
-        "model Point" : "421",
+        "modelPoint" : "3",
         "txt1": "?מהו היקפו של כדור הארץ",
         "txt2": "הכנס תשובה בקילומטר",
         "img1": "https://svs.gsfc.nasa.gov/vis/a000000/a004500/a004597/slow_spin_4k.5542_print.jpg",
@@ -40,9 +40,57 @@
         "status": "INIT" 
     },
     {
-        "id": 1,
+      "id": 1,
+      "quizId": 2,
+      "modelPoint" : "3",
+      "txt1": "?מה גובה קרקעיתו של ים המלח יחסית לפני הים",
+      "txt2": "הכנס תשובה מספרית. מספר שלילי",
+      "img1": "https://i.redd.it/njiaypl0twiz.jpg",
+      "answer": -401,
+      "answerTxt": "ים המלח בגובה 401 מטרים מתחת לפני הים",
+      "img2": "https://qph.fs.quoracdn.net/main-qimg-c6eb72fd94b07f7903fac5779504e21f",
+      "status": "INIT" 
+    },
+    {
+      "id": 2,
+      "quizId": 2,
+      "modelPoint" : "3",
+      "txt1": "?כמה לירות ישראליות שווה שקל חדש אחד",
+      "txt2": "הכנס תשובה מספרית",
+      "img1": "http://pngimg.com/uploads/question_mark/question_mark_PNG84.png",
+      "answer": 10000,
+      "answerTxt": "אחרי שתי המרות",
+      "img2": "https://image.shutterstock.com/z/stock-vector-question-mark-signs-and-word-answer-under-magnifier-glass-abstract-illustration-71759509.jpg",
+      "status": "INIT" 
+    },
+    {
+      "id": 3,
+      "quizId": 2,
+      "modelPoint" : "3",
+      "txt1": "?כמה נקודות יש באיור הזה",
+      "txt2": "הכנס תשובה מספרית",
+      "img1": "http://2.bp.blogspot.com/-AS5Ri5aDTn0/Toi31ZN2bYI/AAAAAAAAAHg/lTu8h24RZSM/s400/dots3.png",
+      "answer": 64,
+      "answerTxt": " 15 X 4 + 4 = 64",
+      "img2": "http://i1-news.softpedia-static.com/images/news2/Apple-Welcomes-64-Bit-iOS7-Apps-on-iTunes-383576-2.png",
+      "status": "INIT" 
+    },
+    {
+      "id": 4,
+      "quizId": 2,
+      "modelPoint" : "3",
+      "txt1": "?כמה שנים נמשכה מלחמת מאה השנים בין אנגליה לצרפת",
+      "txt2": "הכנס תשובה מספרית",
+      "img1": "https://www.ynet.co.il/PicServer2/02022009/2205028/5265559_wa.jpg",
+      "answer": 116,
+      "answerTxt": "הסכסוך ארך מאה ושש עשרה שנים",
+      "img2": "https://www.popy.co.il/storage/content-images/the-person-1-14-270x200.png",
+      "status": "INIT" 
+    },
+      {
+        "id": 5,
         "quizId": 2,
-        "model Point" : "421",
+        "modelPoint" : "2",
         "txt1": "?כמה כוכבים יש בדגל ארצות הברית",
         "txt2": "הכנס תשובה מספרית",
         "img1": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYHrXwL4qTWq1cKqwThz24jqjqxiNxuyAbdY_WJrcmEqaYE5fD1Q",
@@ -52,9 +100,9 @@
         "status": "INIT" 
       },
       {
-        "id": 2,
+        "id": 6,
         "quizId": 2,
-        "model Point" : "421",
+        "modelPoint" : "2",
         "txt1": "?כמה זרועות יש לתמנון",
         "txt2": "הכנס תשובה מספרית",
         "img1": "https://emojipedia-us.s3.amazonaws.com/socialmedia/apple/129/octopus_1f419.png",
@@ -64,9 +112,9 @@
         "status": "INIT" 
       },
       {
-        "id": 3,
+        "id": 7,
         "quizId": 2,
-        "model Point" : "421",
+        "modelPoint" : "2",
         "txt1": "?מה הגיל המינימאלי בישראל אשר בו מותר להתחתן",
         "txt2": "הכנס תשובה מספרית",
         "img1": "http://mascoutahlibrary.com/wp-content/uploads/2014/12/Clip-art-images-for-wedding-free-wedding-clipart-wedding-image.jpg",
@@ -76,33 +124,9 @@
         "status": "INIT" 
       },
       {
-        "id": 4,
+        "id": 8,
         "quizId": 2,
-        "model Point" : "421",
-        "txt1": "?מה גובה קרקעיתו של ים המלח יחסית לפני הים",
-        "txt2": "הכנס תשובה מספרית. מספר שלילי",
-        "img1": "https://i.redd.it/njiaypl0twiz.jpg",
-        "answer": -401,
-        "answerTxt": "ים המלח בגובה 401 מטרים מתחת לפני הים",
-        "img2": "https://qph.fs.quoracdn.net/main-qimg-c6eb72fd94b07f7903fac5779504e21f",
-        "status": "INIT" 
-      },
-      {
-        "id": 5,
-        "quizId": 2,
-        "model Point" : "421",
-        "txt1": "?כמה לירות ישראליות שווה שקל חדש אחד",
-        "txt2": "הכנס תשובה מספרית",
-        "img1": "http://pngimg.com/uploads/question_mark/question_mark_PNG84.png",
-        "answer": 10000,
-        "answerTxt": "אחרי שתי המרות",
-        "img2": "https://image.shutterstock.com/z/stock-vector-question-mark-signs-and-word-answer-under-magnifier-glass-abstract-illustration-71759509.jpg",
-        "status": "INIT" 
-      },
-      {
-        "id": 6,
-        "quizId": 2,
-        "model Point" : "421",
+        "modelPoint" : "2",
         "txt1": "?כמה פעמים בחייו התחתן בנימין נתניהו",
         "txt2": "הכנס תשובה מספרית",
         "img1": "http://pngimg.com/uploads/question_mark/question_mark_PNG84.png",
@@ -110,5 +134,32 @@
         "answerTxt": "בנימים נתניהו התחתן 3 פעמים",
         "img2": "https://image.shutterstock.com/z/stock-vector-question-mark-signs-and-word-answer-under-magnifier-glass-abstract-illustration-71759509.jpg",
         "status": "INIT" 
-      }]
+      },
+      {
+        "id": 9,
+        "quizId": 2,
+        "modelPoint" : "3",
+        "txt1": "?כמה שנים חי מתושלח",
+        "txt2": "הכנס תשובה מספרית",
+        "img1": "https://readingacts.files.wordpress.com/2016/07/methuselah.jpg",
+        "answer": 969,
+        "answerTxt": "מתושלח חי 969 שנים",
+        "img2": "https://i.pinimg.com/736x/59/0e/3f/590e3fd2ecc02a27de9aca92cd296499--religious-studies-noah.jpg",
+        "status": "INIT" 
+      },
+      {
+        "id": 10,
+        "quizId": 2,
+        "modelPoint" : "2",
+        "txt1": "?כמה פעמים לקחה הולנד מקום ראשון במונדיאל",
+        "txt2": "הכנס תשובה מספרית",
+        "img1": "https://i.ytimg.com/vi/QQcTbZXlQFY/maxresdefault.jpg",
+        "answer": 0,
+        "answerTxt": "הולנד אף פעם לא זכתה מקום ראשון במונדיאל",
+        "img2": "https://statics.sportskeeda.com/wp-content/uploads/2014/05/netherlands-1401394324.jpg",
+        "status": "INIT" 
+      }
+
+    
+    ]
 }
