@@ -10,6 +10,7 @@ $scope.bestOfQuiz = [];
 $scope.members = [];
 results = [-1,-2,-3,-4];
 var mgrStat = "INIT";
+$scope.sendText = "Send My Answer";
 
 
 window.onbeforeunload = function() {
@@ -67,7 +68,7 @@ $scope.mgrRefresh = function() {
         if ($scope.currQuestion.status === "ANSWER") {
           $scope.answer = null;
           $scope.dontShow = false;
-          $scope.txtV = "";
+          $scope.sendText = "Send My Answer";
           if ($scope.members.length === 0) {
              smartService.loadMembers($rootScope.activeQuiz).then(function(m) {
                $scope.members = m;
@@ -99,7 +100,7 @@ $scope.checkPoints2 = function (ind) {
  $scope.sendAnswer = function() {
       $rootScope.member.currAns = $scope.answer;
       $rootScope.member.currDate = new Date();
-      $scope.txtV = "V";
+      $scope.sendText = "Send Again";
       smartService.updAnswerOfMember($rootScope.member);
  }
 

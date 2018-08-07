@@ -34,8 +34,8 @@
               <!-- <label for="answer">My Answer is:</label> -->
               <input type="number" class="form-control" id="answer" ng-model="answer" placeholder="Write The Answer Here">
           </div> 
-          <button type="button" class="btn btn-block btn-lg btn-success" ng-click="sendAnswer()"
-           >Send My Answer {{txtV}}</button>
+          <button type="button" class="btn btn-block btn-lg btn-success" ng-click="sendAnswer()" ng-disabled="!answer"
+           >{{sendText}}</button>
       </form>
        <h6>&nbsp</h6>
     </div>
