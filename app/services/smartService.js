@@ -120,7 +120,8 @@ app.factory("smartService", function ($http, $q, homeService) {
       for (i = 0; i < memberWide.length; i++) {
         //if (memberWide[i].currAns === null) memberWide[i].currAns = -999999;
         
-        memberWide[i].diff = Math.abs(question.answer - memberWide[i].currAns) + (tarNow - new Date(memberWide[i].currDate)) / 999999999999;
+        memberWide[i].diff = Math.abs(question.answer - memberWide[i].currAns) + 0.001/(tarNow - new Date(memberWide[i].currDate)) ;
+        console.log( memberWide[i].name + " - "+  memberWide[i].diff);
       }
       for (i = memberWide.length - 2; i >= 0; i--)
         for (j = 0; j <= i; j++)

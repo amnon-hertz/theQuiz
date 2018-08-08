@@ -1,6 +1,9 @@
-app.controller("mainCtrl", function($rootScope,$http, $scope, $location, quizService, smartService) {
+app.controller("mainCtrl", function($rootScope,$http, $scope, $interval, smartService) {
 
-setInterval(function(){ document.getElementById('refreshButton').click() }, 6000);
+$rootScope.intrvl = setInterval(function(){ document.getElementById('refreshButton').click() }, 6000);
+
+// $rootScope.intrvl = $interval(  function() {
+//       document.getElementById('refreshButton').click()} ,6000);
 
 $scope.dontShow = true;
 $scope.currQuestion = null;
