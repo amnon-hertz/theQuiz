@@ -18,9 +18,12 @@ app.factory("smartService", function ($http, $q, homeService) {
       }
     });
     var textDate = new Date();
+    var async = $q.defer();
     var mmbr = new homeService.newMember(null, quiz.id, "SystemMgr", -999999, textDate,  0, 0); 
-    $http.post(linkJson + '/member/',mmbr).then(function(response) {          
+    $http.post(linkJson + '/member/',mmbr).then(function(response) {  
+      async.resolve(response.data)  ;    
            })
+   return async.promise;
   }
 
   function getNextQuestion(quiz) {
@@ -128,6 +131,7 @@ app.factory("smartService", function ($http, $q, homeService) {
           }
       console.log(memberWide);
       for (i = 0; i < memberWide.length; i++) {
+        points = 0;
         if (question.model === "1" && memberWide[i].currAns === question.answer) points = 1;
         if (question.model === "2" && memberWide[i].currAns === question.answer) points = 2;
         if (question.model === "3") points = Math.max(3 - i, 0); // first = 3 points. second = 2. 3rd = 1. all other = 0
@@ -163,11 +167,6 @@ app.factory("smartService", function ($http, $q, homeService) {
       }
     })
   }
-
-
-
-
-
 
   return {
     prepareQuiz: prepareQuiz,
