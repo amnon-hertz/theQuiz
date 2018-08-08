@@ -10,12 +10,7 @@ app.controller("prepareCtrl", function ($rootScope, $http, $scope, $location, $i
   $scope.selectedQuestion = null;
   $scope.quizes = [];
   $scope.questions = [];
-<<<<<<< HEAD
   $scope.activateText = 'הפעל חידון';
-=======
-  $scope.activateText = 'Activate Quiz';
-  clearInterval($rootScope.intrvl);
->>>>>>> 78065a0cb013245a3a767b3d5aaba3a4b2118238
 
   $http.get($rootScope.linkJson + '/quiz').then(function (response) {
     for (i = 0; i < response.data.length; i++) {
