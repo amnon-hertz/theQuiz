@@ -1,11 +1,17 @@
-app.controller("prepareCtrl", function ($rootScope, $http, $scope, $location, quizService, smartService) {
+app.controller("prepareCtrl", function ($rootScope, $http, $scope, $location, $interval, quizService, smartService) {
   $quiz = null;
   $scope.selectedQuiz = null;
+
+  // if (angular.isDefined($rootScope.intrvl)) {
+  //   $interval.cancel($rootScope.intrvl);
+  //   $rootScope.intrvl = undefined;
+  // }
 
   $scope.selectedQuestion = null;
   $scope.quizes = [];
   $scope.questions = [];
   $scope.activateText = 'Activate Quiz';
+  clearInterval($rootScope.intrvl);
 
   $http.get($rootScope.linkJson + '/quiz').then(function (response) {
     for (i = 0; i < response.data.length; i++) {
