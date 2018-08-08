@@ -21,7 +21,7 @@ $scope.mgrRefresh = function() {
     if (mgrStat === "INIT") {
         smartService.getNextQuestion($rootScope.activeQuiz).then(function(q) {
            $scope.currQuestion = q;
-           $rootScope.member.name = "System Mgr";
+           $rootScope.member.name = "SystemMgr";
            $scope.dontShow = true;
         })
       }
