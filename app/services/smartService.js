@@ -18,9 +18,12 @@ app.factory("smartService", function ($http, $q, homeService) {
       }
     });
     var textDate = new Date();
+    var async = $q.defer();
     var mmbr = new homeService.newMember(null, quiz.id, "SystemMgr", -999999, textDate,  0, 0); 
-    $http.post(linkJson + '/member/',mmbr).then(function(response) {          
+    $http.post(linkJson + '/member/',mmbr).then(function(response) {  
+      async.resolve(response.data)  ;    
            })
+   return async.promise;
   }
 
   function getNextQuestion(quiz) {
@@ -163,11 +166,6 @@ app.factory("smartService", function ($http, $q, homeService) {
       }
     })
   }
-
-
-
-
-
 
   return {
     prepareQuiz: prepareQuiz,
