@@ -5,7 +5,7 @@ app.controller("prepareCtrl", function ($rootScope, $http, $scope, $location, qu
   $scope.selectedQuestion = null;
   $scope.quizes = [];
   $scope.questions = [];
-  $scope.activateText = 'Activate Quiz';
+  $scope.activateText = 'הפעל חידון';
 
   $http.get($rootScope.linkJson + '/quiz').then(function (response) {
     for (i = 0; i < response.data.length; i++) {
@@ -24,10 +24,10 @@ app.controller("prepareCtrl", function ($rootScope, $http, $scope, $location, qu
       $scope.selectedQuiz = quiz;
       $rootScope.activeQuiz = quiz;
       if (quiz.status === "OPENED") {
-        $scope.activateText = 'Deactivate Quiz';
+        $scope.activateText = 'בטל חידון';
       }
       else {
-        $scope.activateText = 'Activate Quiz';
+        $scope.activateText = 'הפעל חידון';
       }
       // Open this quiz in Json DB        
     }
@@ -40,11 +40,11 @@ app.controller("prepareCtrl", function ($rootScope, $http, $scope, $location, qu
     }
     if (quiz.status === "OPENED") {
       quiz.status = "CLOSED";
-      $scope.activateText = 'Activate Quiz';
+      $scope.activateText = 'הפעל חידון';
     }
     else {
       quiz.status = "OPENED";
-      $scope.activateText = 'Deactivate Quiz';
+      $scope.activateText = 'בטל חידון';
     }
     $http.put($rootScope.linkJson + '/quiz/' + quiz.id, quiz).then(function (response) {
       if (response.data.status === "OPENED") {
@@ -84,7 +84,7 @@ app.controller("prepareCtrl", function ($rootScope, $http, $scope, $location, qu
     numExists = false;
     for (i = 0; i < $scope.quizes.length; i++)
       if ($scope.num === $scope.quizes[i].num) numExists = true;
-    if (numExists) alert("Quiz Number Already Exists. Please Chose Another Number. Quiz Was Not Added!");
+    if (numExists) alert("מספר החידון כבר קיים. בחר מספר אחר. החידון לא התווסף");
     else {
       var quiz = new quizService.newQuiz(null, $scope.name, $scope.num, "CLOSED");
       $http.post($rootScope.linkJson + '/quiz/', quiz).then(function (response) {
@@ -95,7 +95,7 @@ app.controller("prepareCtrl", function ($rootScope, $http, $scope, $location, qu
 
   $scope.addQuestion = function () {
     if ($scope.selectedQuiz.id === null) {
-      alert("no quiz was selected. Please select quiz first by double Click on it");
+      alert("לא נבחר אף חידון. נא לבחור חידון על ידי לחיצה על עליו");
       return;
     }
     var question = new quizService.newQuestion(null, $scope.selectedQuiz.id,

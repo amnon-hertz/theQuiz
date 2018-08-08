@@ -3,7 +3,11 @@
 
 
 .yellow {background-color: lightblue}
-body {font-size: 85% }
+body {
+    /* direction:rtl; */
+    text-align: right;
+    /* font-size: 85%  */
+}
 .small {font-size: 80%}
 
 

@@ -10,18 +10,23 @@ $scope.bestOfQuiz = [];
 $scope.members = [];
 results = [-1,-2,-3,-4];
 var mgrStat = "INIT";
-$scope.sendText = "Send My Answer";
+$scope.sendText = "שלח התשובה";
+
+$scope.totMembers = 0;
+$scope.totQuestions = 0;
+$scope.questionNumber = 0;
+$scope.totAnswers = 0;
 
 
 window.onbeforeunload = function() {
-  return 'Do you really want to leave this page?';
+  return 'לצאת מדף זה?';
 }
 
 $scope.mgrRefresh = function() {
     if (mgrStat === "INIT") {
         smartService.getNextQuestion($rootScope.activeQuiz).then(function(q) {
            $scope.currQuestion = q;
-           $rootScope.member.name = "System Mgr";
+           $rootScope.member.name = "מנהל החידון";
            $scope.dontShow = true;
         })
       }
@@ -63,13 +68,13 @@ $scope.mgrRefresh = function() {
       smartService.getCurrQuestion($rootScope.activeQuiz).then(function(q) {
         $scope.currQuestion = q;
         if ($scope.currQuestion === null) {
-          alert("no question was selected. Quiz End? (or Error)");
+          alert("לא נבחרה אף שאלה. סוף החידון/שגיאה?");
           return;
         }
         if ($scope.currQuestion.status === "ANSWER") {
           $scope.answer = null;
           $scope.dontShow = false;
-          $scope.sendText = "Send My Answer";
+          $scope.sendText = "שלח התשובה";
           if ($scope.members.length === 0) {
              smartService.loadMembers($rootScope.activeQuiz).then(function(m) {
                $scope.members = m;
@@ -101,7 +106,7 @@ $scope.checkPoints2 = function (ind) {
  $scope.sendAnswer = function() {
       $rootScope.member.currAns = $scope.answer;
       $rootScope.member.currDate = new Date();
-      $scope.sendText = "Send Again";
+      $scope.sendText = "שלח תיקון";
       smartService.updAnswerOfMember($rootScope.member);
  }
 

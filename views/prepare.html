@@ -5,9 +5,9 @@
   
 <div class="row">
     <div class="col-md-3" style="background-color:lavender">
-      <h3>List Of Quizes</h3>
-      <h6>to delete a quiz first doubleClick on it to mark it and then click here
-      <button type="button" ng-click="deleteQuiz(selectedQuiz)">delete</button></h6>
+      <h3>רשימת החידונים</h3>
+      <h6>כדי למחוק חידון: לחץ עליו לחיצה כפולה כדי לסמן אותו ולאחר מכן לחץ כאן
+      <button type="button" ng-click="deleteQuiz(selectedQuiz)">מחק</button></h6>
       <ul class="list-group">
         <li class="list-group-item" ng-repeat="x in quizes" 
         ng-class="{'yellow' : x === selectedQuiz}" ng-dblclick="selectQuiz(x)">
@@ -15,30 +15,30 @@
         </li>    
      </ul> 
      <button type="button" class="btn btn-block btn-success" ng-click="toggleQuizActive(selectedQuiz)">{{ activateText }}</button>
-     <button type="button" class="btn btn-block btn-success" ng-click="gotoMain()">Goto Main Screen</button>
+     <button type="button" class="btn btn-block btn-success" ng-click="gotoMain()">הכנס למסך הראשי</button>
     </div>
 
     <div class="col-md-3" style="background-color:lavenderblush;">
-      <h3>add a new quiz</h3>
+      <h3>הכנס חידון חדש</h3>
       <form>
           <div class="form-group">
-              <label for="name">Enter Name of Quiz:</label>
+              <label for="name">הכנס את שם החידון</label>
               <input type="text" class="form-control" id="name" ng-model="name">
           </div>
           <div class="form-group">
-              <label for="num">Enter Unique Number For Quiz:</label>
+              <label for="num">הכנס מםפר איחודי לחידון</label>
               <input type="number" class="form-control" id="num" ng-model="num">
           </div>
-          <button type="button" class="btn btn-block btn-success" ng-click="addQuiz()">Add This Quiz</button>
+          <button type="button" class="btn btn-block btn-success" ng-click="addQuiz()">הוסף חידון</button>
       </form>
      
     </div>
 
     <div class="col-md-3" style="background-color:lavender">
-       <h3>List Of Questions</h3>
-       <button type="button" class="btn btn-block btn-success" ng-click="getQuestions()">Get Questions</button>
-       <h6>to delete a question first doubleClick on it to mark it and then click here
-           <button type="button" ng-click="deleteQuestion(selectedQuestion)">delete</button></h6>
+       <h3>רשימת השאלות</h3>
+       <button type="button" class="btn btn-block btn-success" ng-click="getQuestions()">קבל שאלות</button>
+       <h6>כדי למחוק שאלה: לחץ עליו לחיצה כפולה כדי לסמן אותו ולאחר מכן לחץ כאן
+           <button type="button" ng-click="deleteQuestion(selectedQuestion)">מחק</button></h6>
         <ul class="list-group">
           <li class="list-group-item small" ng-repeat="x in questions" 
            ng-class="{'yellow' : x === selectedQuestion}" ng-dblclick="selectQuestion(x)">
@@ -48,35 +48,35 @@
     </div>
 
     <div class="col-md-3" style="background-color:lavenderblush;">
-      <h3>add a new question</h3>
+      <h3>הכנס שאלה חדשה</h3>
        <form>
           <div class="form-group">
               <textarea type="text" style="height:90px" class="form-control" id="txt1" 
-                   ng-model="txt1" placeholder="Enter Question here"></textarea>
+                   ng-model="txt1" placeholder="הכנס שאלה כאן"></textarea>
           </div>
           <div class="form-group">
               <textarea type="text" style="height:60px" class="form-control" id="txt2" 
-                   ng-model="txt2" placeholder="Continue Question"></textarea>
+                   ng-model="txt2" placeholder="המשך שאלה"></textarea>
           </div>
 
           <div class="form-group">
-            <input type="text" class="form-control" id="model" ng-model="model" placeholder="enter model group: 1-3">
+            <input type="text" class="form-control" id="model" ng-model="model" placeholder="הכנס סוג הקבוצה: 1-3">
          </div>
 
           <div class="form-group">
-              <input type="text" class="form-control" id="img1" ng-model="img1" placeholder="link to image here">
+              <input type="text" class="form-control" id="img1" ng-model="img1" placeholder="הכנס קישור לתמונה כאן">
           </div>
            <div class="form-group">
-              <input type="number" class="form-control" id="answer" ng-model="answer" placeholder="answer (a number) here">
+              <input type="number" class="form-control" id="answer" ng-model="answer" placeholder="תשובה (מספר) כאן">
           </div>
           <div class="form-group">
               <textarea type="text" style="height:90px" class="form-control" id="answerTxt" 
-                   ng-model="answerTxt" placeholder="Description about the answer"></textarea>
+                   ng-model="answerTxt" placeholder="תיאור התשובה"></textarea>
           </div>
            <div class="form-group">
-              <input type="text" class="form-control" id="img2" ng-model="img2" placeholder="image about the answer">
+              <input type="text" class="form-control" id="img2" ng-model="img2" placeholder="הכנס קישור לתמונה שקשורה לתשובה">
           </div>
-          <button type="button" class="btn btn-block btn-success" ng-click="addQuestion()">Add This Question</button>
+          <button type="button" class="btn btn-block btn-success" ng-click="addQuestion()">הוסף שאלה</button>
        </form> 
     </div>
 

@@ -18,11 +18,11 @@ $scope.mgrLogin = function(){
 
 $scope.memberLogin = function(){
       if ($rootScope.activeQuiz === null) {
-        alert("no quiz was selected. Please confirm the System Manager");
+        alert("לא נבחר אף חידון. אשר את מנהל החידון");
         return;
       }
       if ($scope.quizName !== $rootScope.activeQuiz.name || $scope.quizNumber !== $rootScope.activeQuiz.num) {
-        alert("Quiz Name or Quiz Code does not match. Please Try Again");
+        alert("שם החידון או קוד החידון אינו תואם. בבקשה נסה שוב");
         return;
       }
       var mmbr = new homeService.newMember(null,$rootScope.activeQuiz.id, $scope.memberName, -999999, "",  0, 0); 
