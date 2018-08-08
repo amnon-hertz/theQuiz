@@ -1,100 +1,99 @@
 <div ng-controller="mainCtrl">
-<div class="row">
-   <div class="col-md-8 container" style="background-color:lightgrey;padding:20px;line-height: 49px; ">
-     <button type="button" id="refreshButton" class="btn btn-md btn-success" ng-click="refresh()">Refresh to next</button>&nbsp;&nbsp;
-     <span style="background-color:lavenderblush;padding: 10px">Login&nbspmembers:&nbsp{{totMembers}}</span>&nbsp;&nbsp;
-     <span style="background-color:lavender;padding: 10px">Total&nbspQuestions:&nbsp{{totQuestions}}</span>&nbsp;&nbsp;
-     <span style="background-color:lavenderblush;padding: 10px">Question&nbspNumber:&nbsp{{questionNumber}}</span>&nbsp;&nbsp;
-     <span style="background-color:lavender;padding: 10px">Total&nbspAnswers:&nbsp{{totAnswers}}</span>&nbsp;&nbsp;
-     <span style="background-color:lavenderblush;padding: 10px">My&nbspName:&nbsp{{member.name}}</span>&nbsp;&nbsp;
-     <span style="background-color:lavender;padding: 10px">My&nbspScore:&nbsp{{member.totPoints}}</span>
-   </div>
+  <div class="row">
+    <div class="col-md-8 container" style="background-color:lightgrey;padding:20px;line-height: 49px; ">
+      <button style="padding: 20px; margin-right: 50px " type="button" id="refreshButton" class="btn btn-md btn-success" ng-click="refresh()">רענן/הבא</button>&nbsp;&nbsp;
+      <span style="background-color:lavenderblush;padding: 10px">השם שלי: {{member.name}}</span>&nbsp;&nbsp;
+      <span style="background-color:lavender;padding: 10px">הניקוד שלי: {{member.totPoints}}</span>&nbsp;&nbsp;
+      <span style="background-color:lavenderblush;padding: 10px">מספר משתתפים: {{totMembers}}</span>&nbsp;&nbsp;
+      <span style="background-color:lavender;padding: 10px">כמות השאלות: {{totQuestions}}</span>&nbsp;&nbsp;
+      <span style="background-color:lavenderblush;padding: 10px">מספר תשובה: {{questionNumber}}</span>&nbsp;&nbsp;
+      <span style="background-color:lavender;padding: 10px">כמות התשובות: {{totAnswers}}</span>&nbsp;&nbsp;
+    </div>
 
-   <div class="col-md-4 container" style="background-color:lightblue;padding:20px;line-height: 49px" ng-class="showOption()">
-    <button type="button" class="btn btn-md btn-success" ng-click="mgrRefresh()">Next Question/Answer</button>&nbsp;&nbsp;
-   </div>
-
-</div>
-
-
-<div class="row">
-    <div class="col-md-4 container" style="background-color:lavender">
-      <div class="container">
-         <h3>The Question:</h3>
-         <div class="card">
-            <div class="card-body">
-              <p class="card-text">{{currQuestion.txt1}}</p>           
-              <p class="card-text">{{currQuestion.txt2}}</p>           
-         </div>
-         <img class="card-img-bottom" src="{{currQuestion.img1}}" alt="question image" style="width:100%">
-      </div>
-      <h6>&nbsp</h6>
-      <form>
-          <div class="form-group">
-              <!-- <label for="answer">My Answer is:</label> -->
-              <input type="number" class="form-control" id="answer" ng-model="answer" placeholder="Write The Answer Here">
-          </div> 
-          <button type="button" class="btn btn-block btn-lg btn-success" ng-click="sendAnswer()" ng-disabled="!answer"
-           >{{sendText}}</button>
-      </form>
-       <h6>&nbsp</h6>
+    <div class="col-md-4 container" style="background-color:lightblue;padding:20px;line-height: 49px" ng-class="showOption()">
+      <button type="button" class="btn btn-md btn-success" ng-click="mgrRefresh()">שאלה הבאה/תשובה</button>&nbsp;&nbsp;
     </div>
 
   </div>
 
-    <div class="col-md-4" style="background-color:lavenderblush;">
-        <div class="container">
-         <h3>The Answer:</h3>
-         <div class="card" ng-class = "{'hideMe' : dontShow }">
-            <div class="card-body">
-              <p class="card-text">{{currQuestion.answer}}</p>           
-              <p class="card-text">{{currQuestion.answerTxt}}</p>           
-         </div>
-         <img class="card-img-bottom" src="{{currQuestion.img2}}" alt="answer image" style="width:100%">
+
+  <div class="row">
+    <div class="col-md-4 container" style="background-color:lavender;">
+      <div class="container">
+        <h3  style="text-align: right;">השאלה</h3>
+        <div class="card">
+          <div class="card-body">
+            <p class="card-subtitle">{{currQuestion.txt1}}</p>
+            <p class="card-subtitle">{{currQuestion.txt2}}</p>
+          </div>
+          <img class="card-img-bottom" src="{{currQuestion.img1}}" alt="תמונה לשאלה" style="width:100%">
+        </div>
+        <h6>&nbsp</h6>
+        <form>
+          <div class="form-group">
+            <!-- <label for="answer">My Answer is:</label> -->
+            <input type="number" class="form-control" id="answer" ng-model="answer" placeholder="כתוב את התשובה כאן">
+          </div>
+          <button type="button" class="btn btn-block btn-lg btn-success" ng-click="sendAnswer()" ng-disabled="!answer">{{sendText}}</button>
+        </form>
+        <h6>&nbsp</h6>
       </div>
-      <h6>&nbsp</h6>
+
     </div>
+
+    <div class="col-md-4" style="background-color:lavenderblush;">
+      <div class="container">
+        <h3>התשובה</h3>
+        <div class="card" ng-class="{'hideMe' : dontShow }">
+          <div class="card-body">
+            <p class="card-subtitle">{{currQuestion.answer}}</p>
+            <p class="card-subtitle">{{currQuestion.answerTxt}}</p>
+          </div>
+          <img class="card-img-bottom" src="{{currQuestion.img2}}" alt="answer image" style="width:100%">
+        </div>
+        <h6>&nbsp</h6>
+      </div>
     </div>
 
     <div class="col-md-4" style="background-color:lavender;">
-      <h3>Current Score</h3>
-      <table class="table table-bordered table-sm">
-          <thead  class="thead-dark">
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Name</th>
-              <th scope="col">Answer</th>
-              <th scope="col">Score</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr ng-repeat="member in members | filter: checkPoints | orderBy : 'currPoints' : true">
-              <th scope="row">{{$index+1}}</th>
-              <td>{{member.name}}</td>
-              <td>{{member.currAns}}</td>
-              <td>{{member.currPoints}}</td>
-            </tr>
-          </tbody>
-        </table>
+      <h3>ניקוד לשאלה אחרונה</h3>
+      <table class="table table-bordered table-sm" style="direction:rtl;">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">שם</th>
+            <th scope="col">תשובה</th>
+            <th scope="col">ניקוד</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="member in members | filter: checkPoints | orderBy : 'currPoints' : true">
+            <th scope="row">{{$index+1}}</th>
+            <td>{{member.name}}</td>
+            <td>{{member.currAns}}</td>
+            <td>{{member.currPoints}}</td>
+          </tr>
+        </tbody>
+      </table>
 
-        <h3>Total Score</h3>
-        <table class="table table-bordered table-sm">
-            <thead  class="thead-dark">
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Score</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr ng-repeat="member in members | orderBy : 'totPoints' : true |  limitTo: 5" >
-                <th scope="row">{{$index+1}}</th>
-                <td>{{member.name}}</td>
-                <td>{{member.totPoints}}</td>
-              </tr>
-            </tbody>
-          </table>
+      <h3>ניקוד מסכם</h3>
+      <table class="table table-bordered table-sm" style="direction:rtl;">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">שם</th>
+            <th scope="col">ניקוד</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="member in members | orderBy : 'totPoints' : true |  limitTo: 5">
+            <th scope="row">{{$index+1}}</th>
+            <td>{{member.name}}</td>
+            <td>{{member.totPoints}}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
- </div>
+  </div>
 </div>
