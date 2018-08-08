@@ -139,8 +139,10 @@ app.factory("smartService", function ($http, $q, homeService) {
         //memberWide[i].currLocation = i + 1;
         memberWide[i].currPoints = points;
         memberWide[i].totPoints += points;
-        $http.put('https://json-server-heroku-tyzssscknp.now.sh/member/' + memberWide[i].id, memberWide[i]).then(function (resp2) {
-        })
+        if (points > 0){
+          $http.put('https://json-server-heroku-tyzssscknp.now.sh/member/' + memberWide[i].id, memberWide[i]).then(function (resp2) {
+          })
+        }
       }
     })
   }
