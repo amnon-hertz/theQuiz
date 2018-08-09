@@ -30,7 +30,7 @@ app.factory("smartService", function ($http, $q, homeService) {
     async = $q.defer()
     $http.get('https://json-server-heroku-tyzssscknp.now.sh/question?quizId=' + quiz.id + "&status=INIT").then(function (response) {
       if (response.data === null || response.data.length === 0) {
-        alert("Did Not Succeed To Get Next Question. Is Quiz Ended?");
+        alert("לא מצליח לקבל את השאלה הבאה. האם החידון הסתיים?");
         async.resolve(null);
       }
       var question = response.data[0];
