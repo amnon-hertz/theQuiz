@@ -1,6 +1,6 @@
 app.controller("mainCtrl", function($rootScope,$http, $scope, $interval, smartService) {
 
-$rootScope.intrvl = setInterval(function(){ document.getElementById('refreshButton').click() }, 6000);
+// $rootScope.intrvl = setInterval(function(){ document.getElementById('refreshButton').click() }, 6000);
 
 // $rootScope.intrvl = $interval(  function() {
 //       document.getElementById('refreshButton').click()} ,6000);

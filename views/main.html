@@ -1,13 +1,13 @@
 <div ng-controller="mainCtrl">
   <div class="row">
-    <div class="col-md-8 container" style="background-color:lightgrey;padding:20px;line-height: 49px; ">
-      <button style="padding: 20px; margin-right: 50px " type="button" id="refreshButton" class="btn btn-md btn-success" ng-click="refresh()">רענן/הבא</button>&nbsp;&nbsp;
-      <span style="background-color:lavenderblush;padding: 10px">השם שלי: {{member.name}}</span>&nbsp;&nbsp;
-      <span style="background-color:lavender;padding: 10px">הניקוד שלי: {{member.totPoints}}</span>&nbsp;&nbsp;
-      <span style="background-color:lavenderblush;padding: 10px">מספר משתתפים: {{totMembers}}</span>&nbsp;&nbsp;
-      <span style="background-color:lavender;padding: 10px">כמות השאלות: {{totQuestions}}</span>&nbsp;&nbsp;
-      <span style="background-color:lavenderblush;padding: 10px">מספר תשובה: {{questionNumber}}</span>&nbsp;&nbsp;
-      <span style="background-color:lavender;padding: 10px">כמות התשובות: {{totAnswers}}</span>&nbsp;&nbsp;
+    <div class="col-md-8 container" style="background-color:lightgrey;padding:20px;line-height: 49px; direction: rtl">
+      <button style="padding: 20px;" type="button" id="refreshButton" class="btn btn-md btn-success" ng-click="refresh()">רענן/הבא</button>&nbsp;&nbsp;
+      <span style="background-color:lavenderblush;padding: 10px">השם&nbspשלי:&nbsp{{member.name}}</span>&nbsp;&nbsp;
+      <span style="background-color:lavender;padding: 10px">הניקוד&nbspשלי:&nbsp{{member.totPoints}}</span>&nbsp;&nbsp;
+      <span style="background-color:lavenderblush;padding: 10px">מספר&nbspמשתתפים:&nbsp{{totMembers}}</span>&nbsp;&nbsp;
+      <span style="background-color:lavender;padding: 10px">כמות&nbspהשאלות:&nbsp{{totQuestions}}</span>&nbsp;&nbsp;
+      <span style="background-color:lavenderblush;padding: 10px">מספר&nbspהשאלה:&nbsp{{questionNumber}}</span>&nbsp;&nbsp;
+      <span style="background-color:lavender;padding: 10px">כמות&nbspהתשובות:&nbsp{{totAnswers}}</span>&nbsp;&nbsp;
     </div>
 
     <div class="col-md-4 container" style="background-color:lightblue;padding:20px;line-height: 49px" ng-class="showOption()">
