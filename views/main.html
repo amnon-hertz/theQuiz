@@ -35,7 +35,7 @@
             <input type="number" class="form-control" id="answer" ng-model="answer" placeholder="כתוב את התשובה כאן">
           </div>
           <!-- <button type="button" class="btn btn-block btn-lg btn-success" ng-click="sendAnswer()" >{{sendText}}</button> -->
-          <button type="button" class="btn btn-block btn-lg btn-success" ng-click="sendAnswer()" ng-disabled="{member.status !== "QUESTION}">{{sendText}}</button>
+          <button type="button" class="btn btn-block btn-lg btn-success" ng-click="sendAnswer()" ng-disabled="answer===null">{{sendText}}</button>
         </form>
         <h6>&nbsp</h6>
       </div>
