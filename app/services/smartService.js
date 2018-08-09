@@ -60,9 +60,12 @@ app.factory("smartService", function ($http, $q, homeService) {
   }
 
   function updCurrAnswerToFinished(question) {
+    async = $q.defer();
     question.status = "FINISHED";
     $http.put('https://json-server-heroku-tyzssscknp.now.sh/question/' + question.id, question).then(function (resp2) {
+      async.resolve(response.data[0]);
     })
+    return async.promise;
   }
 
   function getActiveQuiz() {

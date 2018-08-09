@@ -43,7 +43,8 @@ $scope.mgrRefresh = function() {
     }
     if (mgrStat === "ANSWER") {
             mgrStat === "QUESTION";
-            smartService.updCurrAnswerToFinished($scope.currQuestion);
+            smartService.updCurrAnswerToFinished($scope.currQuestion).then(function(q) {  
+            });
             smartService.getNextQuestion($rootScope.activeQuiz).then(function(q) {
                $scope.currQuestion = q;
                $scope.dontShow = true;
@@ -69,7 +70,7 @@ $scope.mgrRefresh = function() {
         });
     
       smartService.getCurrQuestion($rootScope.activeQuiz).then(function(q) {
-        $scope.currQuestion = q[0];
+        $scope.currQuestion = q;
         if ($scope.currQuestion === null) {
           alert("לא נבחרה אף שאלה. סוף החידון/שגיאה?");
           return;
