@@ -69,7 +69,7 @@ $scope.mgrRefresh = function() {
         });
     
       smartService.getCurrQuestion($rootScope.activeQuiz).then(function(q) {
-        $scope.currQuestion = q;
+        $scope.currQuestion = q[0];
         if ($scope.currQuestion === null) {
           alert("לא נבחרה אף שאלה. סוף החידון/שגיאה?");
           return;
@@ -80,7 +80,10 @@ $scope.mgrRefresh = function() {
           $scope.sendText = "שלח התשובה";
           // if ($scope.members.length === 0) {
              smartService.loadMembers($rootScope.activeQuiz).then(function(m) {
-               $scope.members = m;
+               $scope.members.splice(0,$scope.members.length);
+               for (i=0 ; i< m.length ; i++){
+                  $scope.members.push(m[i]);
+               }
              })
           // }
         }
