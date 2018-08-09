@@ -44,12 +44,13 @@ $scope.mgrRefresh = function() {
     if (mgrStat === "ANSWER") {
             mgrStat === "QUESTION";
             smartService.updCurrAnswerToFinished($scope.currQuestion).then(function(q) {  
-            });
-            smartService.getNextQuestion($rootScope.activeQuiz).then(function(q) {
-               $scope.currQuestion = q;
-               $scope.dontShow = true;
+            
+              smartService.getNextQuestion($rootScope.activeQuiz).then(function(q) {
+                 $scope.currQuestion = q;
+                 $scope.dontShow = true;
               })
-            smartService.clnMembersFields($rootScope.activeQuiz);
+          });
+          smartService.clnMembersFields($rootScope.activeQuiz);
       }
     if (mgrStat === "QUESTION") mgrStat = "ANSWER";
        else mgrStat = "QUESTION";
