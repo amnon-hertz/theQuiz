@@ -19,7 +19,7 @@ app.factory("smartService", function ($http, $q, homeService) {
     });
     var textDate = new Date();
     var async = $q.defer();
-    var mmbr = new homeService.newMember(null, quiz.id, "מנהל המערכת", -999999, textDate,  0, 0); 
+    var mmbr = new homeService.newMember(null, quiz.id, "מנהל המערכת", -9999999, textDate,  0, 0); 
     $http.post(linkJson + '/member/',mmbr).then(function(response) {  
       async.resolve(response.data)  ;    
            })
@@ -92,7 +92,7 @@ app.factory("smartService", function ($http, $q, homeService) {
           totMembers++;
           if (resp2.data[i].currAns !== -999999) totAnswered++;
         }
-        async.resolve([totMembers, totQuestions, totFinished + 1, totAnswered]);
+        async.resolve([totMembers - 1, totQuestions, totFinished + 1, totAnswered]);
       })
     })
     return async.promise;
@@ -121,7 +121,6 @@ app.factory("smartService", function ($http, $q, homeService) {
       console.log(resp2.data);
       memberWide = resp2.data;
       for (i = 0; i < memberWide.length; i++) {
-        //if (memberWide[i].currAns === null) memberWide[i].currAns = -999999;
         
         memberWide[i].diff = Math.abs(question.answer - memberWide[i].currAns) + 0.001/(tarNow - new Date(memberWide[i].currDate)) ;
         console.log( memberWide[i].name + " - "+  memberWide[i].diff);
@@ -163,7 +162,7 @@ app.factory("smartService", function ($http, $q, homeService) {
    $http.get('https://json-server-heroku-tyzssscknp.now.sh/member?quizId=' + quiz.id).then(function (resp3) {
     var member = resp3.data;
     for (i = 0; i < member.length; i++) {
-      member[i].currAns = -999999;
+      member[i].currAns = member[i].name === "מנהל המערכת" ?  -999999 * 10 : -999999 ;
       member[i].currDate = new Date(2000,1,1);
       member[i].currPoints = 0;
       member[i].currLocation = 999;

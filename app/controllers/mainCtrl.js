@@ -73,7 +73,8 @@ $scope.mgrRefresh = function() {
       smartService.getCurrQuestion($rootScope.activeQuiz).then(function(q) {
         $scope.currQuestion = q;
         if ($scope.currQuestion === null) {
-          alert("לא נבחרה אף שאלה. סוף החידון/שגיאה?");
+          //alert("לא נבחרה אף שאלה. סוף החידון/שגיאה?");
+          console.log("לא נבחרה אף שאלה. סוף החידון/שגיאה?");
           return;
         }
         if ($scope.currQuestion.status === "ANSWER") {
