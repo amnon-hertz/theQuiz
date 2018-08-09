@@ -1,6 +1,6 @@
 app.controller("mainCtrl", function($rootScope,$http, $scope, $interval, smartService) {
 
-// $rootScope.intrvl = setInterval(function(){ document.getElementById('refreshButton').click() }, 6000);
+$rootScope.intrvl = setInterval(function(){ document.getElementById('refreshButton').click() }, 6000);
 
 // $rootScope.intrvl = $interval(  function() {
 //       document.getElementById('refreshButton').click()} ,6000);
@@ -78,11 +78,11 @@ $scope.mgrRefresh = function() {
           $scope.answer = null;
           $scope.dontShow = false;
           $scope.sendText = "שלח התשובה";
-          if ($scope.members.length === 0) {
+          // if ($scope.members.length === 0) {
              smartService.loadMembers($rootScope.activeQuiz).then(function(m) {
                $scope.members = m;
              })
-          }
+          // }
         }
          else  {
            $scope.dontShow = true;
