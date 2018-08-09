@@ -29,10 +29,10 @@
           <img class="card-img-bottom" src="{{currQuestion.img1}}" alt="תמונה לשאלה" style="width:100%">
         </div>
         <h6>&nbsp</h6>
-        <form>
+        <form ng-submit="sendAnswer()">
           <div class="form-group">
             <!-- <label for="answer">My Answer is:</label> -->
-            <input type="number" class="form-control" id="answer" ng-model="answer" placeholder="כתוב את התשובה כאן">
+            <input type="number" class="form-control" id="answer" ng-model="answer" placeholder="כתוב את התשובה כאן" ng-disabled="isMgrLogin || !dontShow">
           </div>
           <!-- <button type="button" class="btn btn-block btn-lg btn-success" ng-click="sendAnswer()" >{{sendText}}</button> -->
           <button type="button" class="btn btn-block btn-lg btn-success" ng-click="sendAnswer()" ng-disabled="answer===null">{{sendText}}</button>
@@ -50,7 +50,7 @@
             <p class="card-subtitle">{{currQuestion.answer}}</p>
             <p class="card-subtitle">{{currQuestion.answerTxt}}</p>
           </div>
-          <img class="card-img-bottom" src="{{currQuestion.img2}}" alt="answer image" style="width:100%">
+          <img class="card-img-bottom" src="{{currQuestion.img2}}" alt="תמונה עבור התשובה" style="width:100%">
         </div>
         <h6>&nbsp</h6>
       </div>
