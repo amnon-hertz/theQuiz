@@ -13,14 +13,9 @@ app.config(function ($routeProvider) {
     templateUrl: "views/main.html",
     controller: "mainCtrl"
   })
-  // .when ('/login',{
-  //   templateUrl: "views/login.html",
-  //   controller: "loginCtrl"
-  // })
-  //  .when ('/breedDetail/:breedNameLink',{
-  //   templateUrl: "views/breedDetail.html",
-  //   controller: "breedDetailCtrl"
-  // })
-
+  .when ('/final',{
+    templateUrl: "views/final.html",
+    controller: "finalCtrl"
+  })
 
 })

@@ -1,4 +1,4 @@
-app.controller("mainCtrl", function($rootScope,$http, $scope, $interval, smartService) {
+app.controller("mainCtrl", function($rootScope,$http, $scope, $interval, $location, smartService) {
 
 $rootScope.intrvl = setInterval(function(){ document.getElementById('refreshButton').click() }, 6000);
 
@@ -19,6 +19,8 @@ $scope.totMembers = 0;
 $scope.totQuestions = 0;
 $scope.questionNumber = 0;
 $scope.totAnswers = 0;
+
+counter = 0;
 
 
 window.onbeforeunload = function() {
@@ -69,6 +71,11 @@ $scope.mgrRefresh = function() {
          $scope.questionNumber = results[2];
          $scope.totAnswers = results[3];
         });
+        if ($scope.totQuestions === $scope.questionNumber && $scope.currQuestion.status === "ANSWER") 
+        {
+           counter++;
+           if (counter >= 4)  $location.path("/final"); 
+        }
     
       smartService.getCurrQuestion($rootScope.activeQuiz).then(function(q) {
         $scope.currQuestion = q;

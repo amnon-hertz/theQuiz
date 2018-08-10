@@ -92,7 +92,7 @@ app.factory("smartService", function ($http, $q, homeService) {
           totMembers++;
           if (resp2.data[i].currAns !== -999999) totAnswered++;
         }
-        async.resolve([totMembers - 1, totQuestions, totFinished + 1, totAnswered]);
+        async.resolve([totMembers - 1, totQuestions, totFinished + 1, totAnswered - 1]);
       })
     })
     return async.promise;
