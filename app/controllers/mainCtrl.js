@@ -28,6 +28,12 @@ window.onbeforeunload = function() {
 }
 
 $scope.mgrRefresh = function() {
+    if ($scope.currQuestion !== null && $scope.totQuestions === $scope.questionNumber && $scope.currQuestion.status === "ANSWER") 
+    {
+       alert("חידון הסתיים. מייד יועברו כולם למסך סיום");
+       return;
+    }
+
     if (mgrStat === "INIT") {
         smartService.getNextQuestion($rootScope.activeQuiz).then(function(q) {
            $scope.currQuestion = q;
