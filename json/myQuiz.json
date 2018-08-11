@@ -163,8 +163,8 @@
       {
         "id": 11,
         "quizId": 1,
-        "txt1": "מהו אורכו של כביש הסרגל בדרך לעפולה?",
-        "txt2": "הכנס אורך בקילומטרים",
+        "txt1": "?מהו אורכו של קטע כביש הסרגל בדרך לעפולה",
+        "txt2": "הכנס אורך בקילומטרים. אפשר עם נקודה עשרונית",
         "model": "3",
         "img1": "https://upload.wikimedia.org/wikipedia/he/thumb/9/9d/Irron.jpg/250px-Irron.jpg",
         "answer": 7.5,
@@ -175,7 +175,7 @@
       {
         "id": 12,
         "quizId": 1,
-        "txt1": "מהו השיא העולמי בריצת 100 מטר גברים בשניות?",
+        "txt1": "?מהו השיא העולמי בריצת 100 מטר גברים בשניות",
         "txt2": "הכנס מספר עם 2 מקומות אחרי הנקודה",
         "model": "3",
         "img1": "http://images.one.co.il/images/d/dmain/ms/gg1302757.jpg",
@@ -187,7 +187,7 @@
       {
         "id": 13,
         "quizId": 1,
-        "txt1": "באיזה קו רוחב נמצאת העיר תל אביב?",
+        "txt1": "?באיזה קו רוחב נמצאת העיר תל אביב",
         "txt2": "ניתן להכניס מספר עם נקודה עשרונית",
         "model": "3",
         "img1": "http://www.beet.co.il/invitation/map_jahpan1.jpg",
@@ -199,7 +199,7 @@
       {
         "id": 14,
         "quizId": 1,
-        "txt1": "איזה מספר יותר גדול מ- 1789 והוא הפלינדרום הכי קרוב אליו?",
+        "txt1": "?איזה מספר יותר גדול מ- 1789 והוא הפלינדרום הכי קרוב אליו",
         "txt2": "הכנס מספר שלם",
         "model": "3",
         "img1": "https://www.milimbo.co.il/wp-content/uploads/2016/04/cat03-300x94.png",
@@ -211,7 +211,7 @@
       {
         "id": 15,
         "quizId": 1,
-        "txt1": "מהו אורכה של האוניה הגדולה בעולם?",
+        "txt1": "?מהו אורכה של האוניה הגדולה בעולם",
         "txt2": "הכנס מספר שלם",
         "model": "3",
         "img1": "http://cdn.babamail.co.il/Images/2011/8/15/4191d7e7-39ab-42f4-bfb8-0ec21a8fbc44.jpg",
@@ -295,7 +295,7 @@
     {
       "id": 22,
       "quizId": 1,
-      "txt1": "כאשר השעה בישראל 14 בצהרים מה השעה ביפן?",
+      "txt1": "?כאשר השעה בישראל 14 בצהרים מה השעה ביפן",
       "txt2": "הכנס מספר שלם בלי דקות",
       "model": "1",
       "img1": "https://www.680news.com/wp-content/blogs.dir/sites/2/2015/12/16/1216clock.png",
@@ -319,7 +319,7 @@
     {
       "id": 24,
       "quizId": 1,
-      "txt1": "מאיזה סרט לקוחה התמונה למטה? \n1. חטופה \n2. שאטר איילנד \n3. הרץ במבוך \n4. מועדון קרב",
+      "txt1": "?באיזה סרט מופיעה התמונה למטה \n1. חטופה \n2. שאטר איילנד \n3. הרץ במבוך \n4. מועדון קרב",
       "txt2": "הכנס מספר בין 1 ל- 4",
       "model": "2",
       "img1": "http://cinemascope.mako.co.il/wp-content/uploads/Maze-Runner-Canvas-Cover.jpg",
@@ -331,7 +331,7 @@
     {
       "id": 25,
       "quizId": 1,
-      "txt1": "בסדרת הסרטים של הארי פוטר יצאו 8 סרטים. האם זה נכון?",
+      "txt1": "?בסדרת הסרטים של הארי פוטר יצאו 8 סרטים. האם זה נכון",
       "txt2": "הכנס מספר אפס או אחד. 0 = לא נכון . 1 = נכון",
       "model": "1",
       "img1": "https://i.amz.mshcdn.com/-7R3bLC1xTVhrjc86pBeYAogXFY=/950x534/filters:quality(90)/https%3A%2F%2Fblueprint-api-production.s3.amazonaws.com%2Fuploads%2Fcard%2Fimage%2F760683%2F2117d274-d2cf-46b9-b60c-698d65361438.jpg",
@@ -351,6 +351,18 @@
       "answerTxt": "להלן הסדר הנכון",
       "img2": "https://www.zofim.org.il/tripcenter/uploaded_pics/3(2).jpg",
       "status": "INIT"
-    }
+    },
+    {
+    "id": 27,
+    "quizId": 0,
+    "model" : "3",
+    "txt1": "?מהו היקפו של כדור הארץ",
+    "txt2": "הכנס תשובה בקילומטר",
+    "img1": "https://svs.gsfc.nasa.gov/vis/a000000/a004500/a004597/slow_spin_4k.5542_print.jpg",
+    "answer": 40195,
+    "answerTxt": "היקפו של כדור הארץ 40195 קילומטר",
+    "img2": "https://image.shutterstock.com/z/stock-vector-question-mark-signs-and-word-answer-under-magnifier-glass-abstract-illustration-71759509.jpg",
+    "status": "INIT" 
+     }
     ]
 }
