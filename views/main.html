@@ -31,7 +31,7 @@
         <form ng-submit="sendAnswer()">
           <div class="form-group">
             <!-- <label for="answer">My Answer is:</label> -->
-            <input type="number" class="form-control" id="answer" ng-model="answer" placeholder="כתוב את התשובה כאן" ng-disabled="isMgrLogin || !dontShow">
+            <input type="number" step="0.01" class="form-control" id="answer" ng-model="answer" placeholder="כתוב את התשובה כאן" ng-disabled="isMgrLogin || !dontShow">
           </div>
           <button type="button" class="btn btn-block btn-lg btn-success" ng-click="sendAnswer()" ng-disabled="answer===null">{{sendText}}</button>
         </form>
