@@ -1,34 +1,59 @@
-
-
-
-
-.yellow {background-color: lightblue}
 body {
-    /* direction:rtl; */
     text-align: right;
-    /* font-size: 85%  */
 }
-.small {font-size: 80%}
-
-
-.showOff {display: none}
-.ShowOn {display:block}
-img {padding-bottom: 20px;margin-bottom: 20px}
-
-.hideMe {display : none}
 
 .form-group, .card-body {
     direction: rtl;
+}
+
+.yellow {
+    background-color: lightblue;
+}
+
+.small {
+    font-size: 80%;
+}
+
+.showOff {
+    display: none;
+}
+
+.ShowOn {
+    display:block;
+}
+
+img {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.hideMe {
+    display : none;
 }
 
 .txtBold{
     font-weight: bold;
 }
 
-.final {font-size: 110% ; border: 4px solid rgb(161, 85, 248)} 
-.backg1 {background-color: rgb(133, 152, 255);color: rgb(10, 1, 1)}
-.backg2 {background-color: rgb(24, 58, 250);color: rgb(255, 255, 255)}
+.final {
+    font-size: 110% ; 
+    border: 4px solid rgb(161, 85, 248);
+} 
 
-.final h3 {padding: 8px}
+.backg1 {
+    background-color: rgb(133, 152, 255);
+    color: rgb(10, 1, 1);
+}
 
-.spcBttn {padding-bottom: 5px}
+.backg2 {
+    background-color: rgb(24, 58, 250);
+    color: rgb(255, 255, 255);
+}
+
+.final h3 {
+    padding: 8px;
+}
+
+.spcBttn {
+    padding-bottom: 5px;
+}

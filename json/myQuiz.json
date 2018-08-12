@@ -71,7 +71,7 @@
       "txt2": "הכנס תשובה מספרית",
       "img1": "https://2.bp.blogspot.com/-AS5Ri5aDTn0/Toi31ZN2bYI/AAAAAAAAAHg/lTu8h24RZSM/s400/dots3.png",
       "answer": 64,
-      "answerTxt": " 15 X 4 + 4 = 64",
+      "answerTxt": "64 = 4 + (4 * 15)",
       "img2": "https://www.drodd.com/images16/64-1.jpg",
       "status": "INIT" 
     },
@@ -252,7 +252,7 @@
         "txt2": "הכנס תשובה מספרית",
         "img1": "https://2.bp.blogspot.com/-AS5Ri5aDTn0/Toi31ZN2bYI/AAAAAAAAAHg/lTu8h24RZSM/s400/dots3.png",
         "answer": 64,
-        "answerTxt": " 15 X 4 + 4 = 64",
+        "answerTxt": "64 = 4 + (4 * 15)",
         "img2": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGc_k8mtiZf4HYqtXQnuqG7fU3ryONsDp2vKan5JKNc_3bk3aDKg",
         "status": "INIT" 
       },

@@ -111,6 +111,7 @@ app.controller("prepareCtrl", function ($rootScope, $http, $scope, $location, $i
       $scope.questions.push(response.data);
     })
   }
+
   $scope.getQuestions = function () {
     if ($scope.selectedQuiz === null) return;
     $http.get($rootScope.linkJson + '/question').then(function (response) {
@@ -128,6 +129,7 @@ app.controller("prepareCtrl", function ($rootScope, $http, $scope, $location, $i
     $location.path("/main");
   }
 })
+
 app.factory("quizService", function () {
   function Quiz(id, name, num, status) {
     this.id = id;
@@ -153,5 +155,4 @@ app.factory("quizService", function () {
     newQuiz: Quiz,
     newQuestion: Question
   }
-
 })

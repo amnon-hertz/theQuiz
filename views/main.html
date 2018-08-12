@@ -13,14 +13,12 @@
     <div class="col-md-4 container" style="background-color:lightblue;padding:20px;line-height: 49px" ng-class="showOption()">
       <button style="padding: 20px;" type="button" class="btn btn-md btn-success" ng-click="mgrRefresh()">שאלה הבאה/תשובה</button>&nbsp;&nbsp;
     </div>
-
   </div>
-
 
   <div class="row">
     <div class="col-md-4 container" style="background-color:lavender;">
       <div class="container">
-        <h3  style="text-align: right;">השאלה</h3>
+        <h3 style="text-align: right;">השאלה</h3>
         <div class="card">
           <div class="card-body">
             <!-- <p class="card-subtitle">{{currQuestion.txt1}}</p> -->
@@ -35,12 +33,10 @@
             <!-- <label for="answer">My Answer is:</label> -->
             <input type="number" class="form-control" id="answer" ng-model="answer" placeholder="כתוב את התשובה כאן" ng-disabled="isMgrLogin || !dontShow">
           </div>
-          <!-- <button type="button" class="btn btn-block btn-lg btn-success" ng-click="sendAnswer()" >{{sendText}}</button> -->
           <button type="button" class="btn btn-block btn-lg btn-success" ng-click="sendAnswer()" ng-disabled="answer===null">{{sendText}}</button>
         </form>
         <h6>&nbsp</h6>
       </div>
-
     </div>
 
     <div class="col-md-4" style="background-color:lavenderblush;">
@@ -96,6 +92,5 @@
         </tbody>
       </table>
     </div>
-
   </div>
 </div>
