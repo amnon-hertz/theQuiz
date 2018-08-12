@@ -307,7 +307,7 @@
     {
       "id": 23,
       "quizId": 1,
-      "txt1": "מה יוצא דופן מבין הבאים: \n1. שמש \n2. ירח \n3. פנס \n4. נר",
+      "txt1": "מה יוצא דופן מבין הבאים: <br> 1. שמש  <br/> 2. ירח <br> 3. פנס <br> 4. נר",
       "txt2": "הקלד מספר בין 1 ל - 4",
       "model": "2",
       "img1": "http://hdwpro.com/wp-content/uploads/2018/01/Widescreen-Sun-Wallpaper.jpg",
