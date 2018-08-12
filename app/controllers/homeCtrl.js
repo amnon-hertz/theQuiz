@@ -1,6 +1,6 @@
 
 app.controller("homeCtrl", function($rootScope,$scope, $location, $http, $interval, homeService, smartService) {
-$rootScope.linkJson = "https://json-server-heroku-kfcpnixpln.now.now.sh";
+$rootScope.linkJson = "https://json-server-heroku-kfcpnixpln.now.sh";
 
 // if (angular.isDefined($rootScope.intrvl)) {
 //   $interval.cancel($rootScope.intrvl);
