@@ -21,6 +21,10 @@ img {padding-bottom: 20px;margin-bottom: 20px}
     direction: rtl;
 }
 
+.txtBold{
+    font-weight: bold;
+}
+
 .final {font-size: 110% ; border: 4px solid rgb(161, 85, 248)} 
 .backg1 {background-color: rgb(133, 152, 255);color: rgb(10, 1, 1)}
 .backg2 {background-color: rgb(24, 58, 250);color: rgb(255, 255, 255)}
