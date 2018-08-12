@@ -6,14 +6,14 @@
       "status": "CLOSED"
     }, 
       {"id": 1,
-      "name":  "quiz6",
+      "name":  "quiz1",
       "num": 37,
-      "status": "CLOSED"
+      "status": "OPENED"
       },
       {"id": 2,
-      "name":  "quiz7",
+      "name":  "quiz2",
       "num": 123,
-      "status": "OPENED"
+      "status": "CLOSED"
       }],
 
    "member": [{
