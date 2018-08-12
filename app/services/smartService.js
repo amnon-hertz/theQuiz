@@ -90,7 +90,7 @@ app.factory("smartService", function ($http, $q, homeService) {
       $http.get('https://json-server-heroku-xutgonzgbe.now.sh/member?quizId=' + quiz.id).then(function (resp2) {
         for (i = 0; i < resp2.data.length; i++) {
           totMembers++;
-          if (resp2.data[i].currAns !== -999999) totAnswered++;
+          if (resp2.data[i].currAns > -999999) totAnswered++;
         }
         async.resolve([totMembers - 1, totQuestions, totFinished + 1, totAnswered]);
       })
