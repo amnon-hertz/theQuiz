@@ -17,7 +17,7 @@ img {padding-bottom: 20px;margin-bottom: 20px}
 
 .hideMe {display : none}
 
-.form-group {
+.form-group, .card-body {
     direction: rtl;
 }
 

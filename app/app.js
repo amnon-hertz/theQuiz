@@ -1,4 +1,4 @@
-var app = angular.module("quizApp",["ngRoute"]);
+var app = angular.module("quizApp",["ngRoute", "ngSanitize"]);
 app.config(function ($routeProvider) {
   $routeProvider
   .when ('/',{
