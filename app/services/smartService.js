@@ -19,7 +19,7 @@ app.factory("smartService", function ($http, $q, homeService) {
     });
     var textDate = new Date();
     var async = $q.defer();
-    var mmbr = new homeService.newMember(null, quiz.id, "מנהל המערכת", -9999999, textDate,  0, 0); 
+    var mmbr = new homeService.newMember(null, quiz.id, "מנהל החידון", -9999999, textDate,  0, 0); 
     $http.post(linkJson + '/member/',mmbr).then(function(response) {  
       async.resolve(response.data)  ;    
            })
@@ -165,7 +165,7 @@ app.factory("smartService", function ($http, $q, homeService) {
    $http.get('https://json-server-heroku-xeolckeycb.now.sh/member?quizId=' + quiz.id).then(function (resp3) {
     var member = resp3.data;
     for (i = 0; i < member.length; i++) {
-      member[i].currAns = member[i].name === "מנהל המערכת" ?  -999999 * 10 : -999999 ;
+      member[i].currAns = member[i].name === "מנהל החידון" ?  -999999 * 10 : -999999 ;
       member[i].currDate = new Date(2000,1,1);
       member[i].currPoints = 0;
       member[i].currLocation = 999;
