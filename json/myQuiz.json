@@ -57,10 +57,10 @@
       "model" : "3",
       "txt1": "כמה לירות ישראליות שווה שקל חדש אחד?",
       "txt2": "הכנס תשובה מספרית",
-      "img1": "https://pngimg.com/uploads/question_mark/question_mark_PNG84.png",
+      "img1": "https://upload.wikimedia.org/wikipedia/he/5/50/One_IL.jpg",
       "answer": 10000,
       "answerTxt": "אחרי שתי המרות",
-      "img2": "https://image.shutterstock.com/z/stock-vector-question-mark-signs-and-word-answer-under-magnifier-glass-abstract-illustration-71759509.jpg",
+      "img2": "https://bidspirit-images.global.ssl.fastly.net/tzolmans/cloned-images/126289/1/a_ignore_q_80_w_1000_c_limit_1.jpg",
       "status": "INIT" 
     },
     {
@@ -72,7 +72,7 @@
       "img1": "https://2.bp.blogspot.com/-AS5Ri5aDTn0/Toi31ZN2bYI/AAAAAAAAAHg/lTu8h24RZSM/s400/dots3.png",
       "answer": 64,
       "answerTxt": " 15 X 4 + 4 = 64",
-      "img2": "https://i1-news.softpedia-static.com/images/news2/Apple-Welcomes-64-Bit-iOS7-Apps-on-iTunes-383576-2.png",
+      "img2": "https://www.drodd.com/images16/64-1.jpg",
       "status": "INIT" 
     },
     {
@@ -190,7 +190,7 @@
         "txt1": "באיזה קו רוחב נמצאת העיר תל אביב?",
         "txt2": "ניתן להכניס מספר עם נקודה עשרונית",
         "model": "3",
-        "img1": "https://www.beet.co.il/invitation/map_jahpan1.jpg",
+        "img1": "https://www.ligdol.co.il/Upload/sharona_mapa.jpg",
         "answer": 32.07,
         "answerTxt": "תל אביב ממוקמת בין קו רוחב 32.01 ל- 32.14",
         "img2": "https://i.kinja-img.com/gawker-media/image/upload/s--X78oGAUc--/c_scale,f_auto,fl_progressive,q_80,w_800/annzlu98d8ibxmkpdons.jpg",
@@ -310,7 +310,7 @@
       "txt1": "מה יוצא דופן מבין הבאים: <br> 1. שמש  <br> 2. ירח <br> 3. פנס <br> 4. נר",
       "txt2": "הקלד מספר בין 1 ל - 4",
       "model": "2",
-      "img1": "https://hdwpro.com/wp-content/uploads/2018/01/Widescreen-Sun-Wallpaper.jpg",
+      "img1": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Solar_prominence_from_STEREO_spacecraft_September_29%2C_2008.jpg/500px-Solar_prominence_from_STEREO_spacecraft_September_29%2C_2008.jpg",
       "answer": 2,
       "answerTxt": "הירח לא גוף מאיר. הוא מחזיר את אור השמש",
       "img2": "https://assets.atlasobscura.com/article_images/49118/image.jpg",
@@ -322,7 +322,7 @@
       "txt1": "באיזה סרט מופיעה התמונה למטה? <br>1. חטופה <br>2. שאטר איילנד <br>3. הרץ במבוך <br>4. מועדון קרב",
       "txt2": "הכנס מספר בין 1 ל- 4",
       "model": "2",
-      "img1": "https://cinemascope.mako.co.il/wp-content/uploads/Maze-Runner-Canvas-Cover.jpg",
+      "img1": "https://images1.ynet.co.il/PicServer4/2014/09/18/5596262/559622001000100640360no.jpg",
       "answer": 3,
       "answerTxt": "מתוך הסרט הרץ במבוך",
       "img2": "https://i.ytimg.com/vi/x0r9Q0pC-qo/hqdefault.jpg",
