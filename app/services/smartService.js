@@ -152,6 +152,9 @@ app.factory("smartService", function ($http, $q, homeService) {
    function loadMembers(quiz) {
      var async = $q.defer();
      $http.get('https://json-server-heroku-pnvdfvvmoy.now.sh/member?quizId=' + quiz.id).then(function (response) {
+         for (i = 0; i < memberWide.length; i++) 
+                 if (response.data[i].name === "מנהל החידון") response.data.splice(i,1);
+
          async.resolve(response.data);
        })
      return async.promise;
