@@ -31,8 +31,14 @@ img {
     display : none;
 }
 
-.txtBold{
+.txtDecor{
     font-weight: bold;
+    font-family: "Guttman Yad-Brush";
+}
+
+.txtDecor2{
+    /* font-weight: bold; */
+    font-family: "Guttman Yad-Brush";
 }
 
 .final {

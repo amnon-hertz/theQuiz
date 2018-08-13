@@ -22,8 +22,8 @@
         <div class="card">
           <div class="card-body">
             <!-- <p class="card-subtitle">{{currQuestion.txt1}}</p> -->
-            <p class="card-subtitle spcBttn txtBold" ng-bind-html="currQuestion.txt1"></p>
-            <p class="card-subtitle">{{currQuestion.txt2}}</p>
+            <p class="card-subtitle spcBttn txtDecor" ng-bind-html="currQuestion.txt1"></p>
+            <p class="card-subtitle txtDecor2">{{currQuestion.txt2}}</p>
           </div>
           <img class="card-img-bottom" src="{{currQuestion.img1}}" alt="תמונה לשאלה" style="width:100%">
         </div>
@@ -44,8 +44,8 @@
         <h3>התשובה</h3>
         <div class="card" ng-class="{'hideMe' : dontShow }">
           <div class="card-body">
-            <p class="card-subtitle spcBttn txtBold">{{currQuestion.answer}}</p>
-            <p class="card-subtitle">{{currQuestion.answerTxt}}</p>
+            <p class="card-subtitle spcBttn txtDecor">{{currQuestion.answer}}</p>
+            <p class="card-subtitle txtDecor2">{{currQuestion.answerTxt}}</p>
           </div>
           <img class="card-img-bottom" src="{{currQuestion.img2}}" alt="תמונה עבור התשובה" style="width:100%">
         </div>
