@@ -104,7 +104,7 @@ app.controller("mainCtrl", function ($rootScope, $http, $scope, $interval, $loca
       }
       else {
         $scope.dontShow = true;
-        $scope.members.splice(0, $scope.members.length);
+        //$scope.members.splice(0, $scope.members.length);
       }
     })
   }

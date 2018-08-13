@@ -28,7 +28,7 @@ app.controller("homeCtrl", function ($rootScope, $scope, $location, $http, $inte
       alert("לא נבחר אף חידון. אשר את מנהל החידון");
       return;
     }
-    if ($scope.quizName !== $rootScope.activeQuiz.name || $scope.quizNumber !== $rootScope.activeQuiz.num) {
+    if ($scope.quizNumber !== $rootScope.activeQuiz.num) {
       alert("שם החידון או קוד החידון אינו תואם. בבקשה נסה שוב");
       return;
     }
