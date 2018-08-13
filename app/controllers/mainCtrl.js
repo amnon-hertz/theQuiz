@@ -1,7 +1,10 @@
 app.controller("mainCtrl", function ($rootScope, $http, $scope, $interval, $location, smartService) {
 
-  $rootScope.intrvl = setInterval(function () { document.getElementById('refreshButton').click() }, 6000);
-
+  if (!$rootScope.intrvl) {
+  $rootScope.intrvl = setInterval(function () { 
+    document.getElementById('refreshButton').click();
+    }, 6000);
+  }
   // $rootScope.intrvl = $interval(  function() {
   //       document.getElementById('refreshButton').click()} ,6000);
 
@@ -78,11 +81,6 @@ app.controller("mainCtrl", function ($rootScope, $http, $scope, $interval, $loca
       $scope.totAnswers = results[3];
     });
 
-    if ($scope.totQuestions === $scope.questionNumber && $scope.currQuestion.status === "ANSWER") {
-      counter++;
-      if (counter >= 4) $location.path("/final");
-    }
-
     smartService.getCurrQuestion($rootScope.activeQuiz).then(function (q) {
       $scope.currQuestion = q;
       if ($scope.currQuestion === null) {
@@ -104,9 +102,14 @@ app.controller("mainCtrl", function ($rootScope, $http, $scope, $interval, $loca
       }
       else {
         $scope.dontShow = true;
-        //$scope.members.splice(0, $scope.members.length);
+        $scope.members.splice(0, $scope.members.length);
       }
     })
+
+    if ($scope.totQuestions === $scope.questionNumber && $scope.currQuestion.status === "ANSWER") {
+      counter++;
+      if (counter >= 4) $location.path("/final");
+    }
   }
 
   $scope.checkPoints = function (member) {
